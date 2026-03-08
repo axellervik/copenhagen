@@ -454,8 +454,8 @@ export const places: Place[] = [
     id: "riga",
     name: "Riga",
     category: "bar",
-    lat: 55.6668,
-    lng: 12.5530,
+    lat: 55.66694,
+    lng: 12.55251,
     description:
       "Absolute best vibe when the sun is out. Try their custom Pilsner or Spritz on tap. A Vesterbro classic.",
     neighborhood: "Vesterbro",
