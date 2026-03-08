@@ -33,7 +33,7 @@ export const CATEGORY_CONFIG: Record<
   cafe: { label: "Café", emoji: "☕", color: "hsl(25, 70%, 48%)" },
   attraction: { label: "Attraction", emoji: "🏛️", color: "hsl(210, 70%, 50%)" },
   museum: { label: "Museum", emoji: "🎨", color: "hsl(330, 65%, 50%)" },
-  "sun-spot": { label: "Sun Spot", emoji: "☀️", color: "hsl(50, 90%, 50%)" },
+  swimming: { label: "Swimming", emoji: "🏊", color: "hsl(195, 80%, 50%)" },
 };
 
 export const places: Place[] = [
