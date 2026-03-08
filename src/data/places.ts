@@ -569,8 +569,8 @@ export const places: Place[] = [
     id: "two-socks-central",
     name: "Two Socks (Indre By)",
     category: "bar",
-    lat: 55.67649,
-    lng: 12.57365,
+    lat: 55.67763,
+    lng: 12.56645,
     description:
       "Gin bar with 170+ gins and homemade G&T recipes. The original Two Socks location — rustic, cosy and intimate. A must for gin lovers.",
     neighborhood: "Indre By",
