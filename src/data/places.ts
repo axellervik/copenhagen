@@ -6,7 +6,8 @@ export type PlaceCategory =
   | "cafe"
   | "attraction"
   | "museum"
-  | "swimming";
+  | "swimming"
+  | "vintage";
 
 export interface Place {
   id: string;
@@ -34,6 +35,7 @@ export const CATEGORY_CONFIG: Record<
   attraction: { label: "Attraction", emoji: "🏛️", color: "hsl(210, 70%, 50%)" },
   museum: { label: "Museum", emoji: "🎨", color: "hsl(330, 65%, 50%)" },
   swimming: { label: "Swimming", emoji: "🏊", color: "hsl(195, 80%, 50%)" },
+  vintage: { label: "Vintage / Thrift", emoji: "🛍️", color: "hsl(50, 70%, 45%)" },
 };
 
 export const places: Place[] = [
@@ -994,6 +996,45 @@ export const places: Place[] = [
     neighborhood: "Indre By",
     priceLevel: 1,
     tags: ["shopping", "pedestrian", "free", "walking"],
+  },
+  {
+    id: "christiania",
+    name: "Freetown Christiania",
+    category: "attraction",
+    lat: 55.67350,
+    lng: 12.59650,
+    description:
+      "Self-proclaimed autonomous neighbourhood founded in 1971 by squatters in abandoned military barracks. A unique countercultural community with DIY-built houses, art, and a very distinct vibe. Pusher Street is gone, but the spirit remains. Don't take photos on the main drag.",
+    neighborhood: "Christiania",
+    priceLevel: 1,
+    tags: ["freetown", "alternative", "historic", "no photos", "free"],
+  },
+  {
+    id: "nemoland",
+    name: "Nemoland",
+    category: "bar",
+    lat: 55.67385,
+    lng: 12.59530,
+    description:
+      "Christiania's legendary outdoor bar. Cheap beers, live music in summer, and the most laid-back atmosphere in Copenhagen. Cash only.",
+    neighborhood: "Christiania",
+    priceLevel: 1,
+    tags: ["beer bar", "outdoor", "live music", "cash only", "cheap"],
+  },
+
+  // Vintage / Thrift
+  {
+    id: "prag",
+    name: "Prag",
+    category: "vintage",
+    lat: 55.66405,
+    lng: 12.55195,
+    description:
+      "The big green building in Kødbyen — a massive vintage and creative hub across multiple floors. Clothing, furniture, records, and quirky finds. A Vesterbro institution.",
+    neighborhood: "Kødbyen",
+    priceLevel: 1,
+    website: "https://www.pfragt.dk/",
+    tags: ["vintage", "thrift", "furniture", "records", "multi-floor"],
   },
 
   // Cafés
