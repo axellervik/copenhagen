@@ -81,8 +81,18 @@ const MapView = () => {
   }, []);
 
   const filteredPlaces = useMemo(
-    () => allPlaces.filter((p) => activeCategories.has(p.category)),
-    [activeCategories]
+    () => allPlaces.filter((p) => {
+      if (!activeCategories.has(p.category)) return false;
+      if (!searchQuery.trim()) return true;
+      const q = searchQuery.toLowerCase();
+      return (
+        p.name.toLowerCase().includes(q) ||
+        p.neighborhood.toLowerCase().includes(q) ||
+        p.tags?.some((t) => t.toLowerCase().includes(q)) ||
+        p.description.toLowerCase().includes(q)
+      );
+    }),
+    [activeCategories, searchQuery]
   );
 
   const handleSelectPlace = useCallback((place: Place) => {
