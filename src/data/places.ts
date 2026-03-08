@@ -625,6 +625,79 @@ export const places: Place[] = [
     website: "https://theartisan.dk/",
     tags: ["specialty coffee", "micro roastery", "lakeside"],
   },
+  {
+    id: "pods-of-beans",
+    name: "Pods of Beans",
+    category: "cafe",
+    lat: 55.67370,
+    lng: 12.57590,
+    description:
+      "Cosy café on Ny Kongensgade near the lakes. Great for a quiet coffee break in the city centre.",
+    neighborhood: "Indre By",
+    priceLevel: 1,
+    tags: ["specialty coffee", "cosy"],
+  },
+  {
+    id: "signature-coffee",
+    name: "Signature Coffee",
+    category: "cafe",
+    lat: 55.67907,
+    lng: 12.56899,
+    description:
+      "Coffee shop and bar on Sankt Peders Stræde. Specialty coffee by day, drinks by evening.",
+    neighborhood: "Indre By",
+    priceLevel: 2,
+    tags: ["specialty coffee", "bar", "central"],
+  },
+  {
+    id: "switch-coffee",
+    name: "Switch Coffee",
+    category: "cafe",
+    lat: 55.67892,
+    lng: 12.57060,
+    description:
+      "Specialty coffee on Studiestræde in the Latin Quarter. Simple, focused, excellent brews.",
+    neighborhood: "Indre By",
+    priceLevel: 1,
+    tags: ["specialty coffee", "latin quarter"],
+  },
+  {
+    id: "democratic-coffee",
+    name: "Democratic Coffee",
+    category: "cafe",
+    lat: 55.68084,
+    lng: 12.57342,
+    description:
+      "Popular café on Krystalgade near the university. Good coffee in a relaxed, studenty atmosphere.",
+    neighborhood: "Indre By",
+    priceLevel: 1,
+    tags: ["specialty coffee", "university area"],
+  },
+  {
+    id: "o12-coffee",
+    name: "Ø12 Coffee & Eatery",
+    category: "cafe",
+    lat: 55.69013,
+    lng: 12.57528,
+    description:
+      "Charming coffee spot on Øster Farimagsgade near the Botanical Garden. Great brunch and specialty coffee.",
+    neighborhood: "Indre By",
+    priceLevel: 2,
+    tags: ["specialty coffee", "brunch", "botanical garden"],
+  },
+  {
+    id: "prolog-papiroen",
+    name: "Prolog Coffee Bar Papirøen",
+    category: "cafe",
+    lat: 55.67837,
+    lng: 12.59874,
+    description:
+      "Prolog's waterfront location on Papirøen (Paper Island). Specialty coffee with harbour views in a vibrant, creative neighbourhood.",
+    neighborhood: "Christianshavn",
+    priceLevel: 2,
+    website: "https://prologcoffee.com/",
+    tags: ["specialty coffee", "waterfront", "papirøen"],
+  },
 ];
 
 // Import and merge museum data
