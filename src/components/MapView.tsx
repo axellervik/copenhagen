@@ -218,10 +218,26 @@ const MapView = () => {
           </div>
         </div>
 
-        {/* Category filters below title, aligned right */}
-        <div className="flex justify-end px-3 sm:px-4 -mt-1 pointer-events-auto">
-          <CategoryFilter activeCategories={activeCategories} onToggle={toggleCategory} />
-        </div>
+      </div>
+
+      {/* Vertical category filters panel — top right under title */}
+      <div className="absolute top-14 sm:top-16 right-3 sm:right-4 z-[1000] flex flex-col items-end gap-2">
+        <button
+          onClick={() => setFiltersOpen(!filtersOpen)}
+          className={`p-2.5 rounded-lg border shadow-sm transition-colors ${
+            filtersOpen
+              ? "bg-primary text-primary-foreground border-primary"
+              : "bg-card text-foreground border-border hover:bg-secondary"
+          }`}
+          aria-label="Toggle filters"
+        >
+          <Filter className="w-4 h-4" />
+        </button>
+        {filtersOpen && (
+          <div className="bg-card/95 backdrop-blur-sm border border-border rounded-lg shadow-md p-2 flex flex-col gap-1">
+            <CategoryFilter activeCategories={activeCategories} onToggle={toggleCategory} vertical />
+          </div>
+        )}
       </div>
 
       <ThemeToggle theme={theme} onChange={setTheme} />
