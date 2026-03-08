@@ -70,6 +70,7 @@ const MapView = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(true);
+  const [showNeighborhoods, setShowNeighborhoods] = useState(true);
 
   const toggleCategory = useCallback((cat: PlaceCategory) => {
     setActiveCategories((prev) => {
