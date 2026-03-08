@@ -67,7 +67,7 @@ const MapView = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
-  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [filtersOpen, setFiltersOpen] = useState(true);
 
   const toggleCategory = useCallback((cat: PlaceCategory) => {
     setActiveCategories((prev) => {
