@@ -590,11 +590,11 @@ export const places: Place[] = [
     id: "impact-roasters",
     name: "Impact Roasters",
     category: "cafe",
-    lat: 55.66695,
-    lng: 12.50433,
+    lat: 55.68950,
+    lng: 12.55543,
     description:
-      "Local specialty coffee roastery in Valby with a focus on ethical sourcing and direct trade. Great pour-overs and a welcoming space by Langgade station.",
-    neighborhood: "Valby",
+      "Specialty coffee roastery on Griffenfeldsgade in Nørrebro with a focus on ethical sourcing and direct trade. Great pour-overs in a welcoming space.",
+    neighborhood: "Nørrebro",
     priceLevel: 1,
     website: "https://impactroasters.dk/",
     tags: ["specialty coffee", "roastery", "ethical"],
@@ -697,6 +697,18 @@ export const places: Place[] = [
     priceLevel: 2,
     website: "https://prologcoffee.com/",
     tags: ["specialty coffee", "waterfront", "papirøen"],
+  },
+  {
+    id: "alaska-kaffe",
+    name: "Alaska Kaffe",
+    category: "cafe",
+    lat: 55.67857,
+    lng: 12.56965,
+    description:
+      "Coffee spot on Studiestræde in the Latin Quarter. A relaxed neighbourhood café in the heart of the city.",
+    neighborhood: "Indre By",
+    priceLevel: 1,
+    tags: ["coffee", "latin quarter"],
   },
 ];
 
