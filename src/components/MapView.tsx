@@ -237,16 +237,16 @@ const MapView = () => {
       {/* Top bar with title + filters */}
       <div className="absolute top-0 left-0 right-0 z-[1000] pointer-events-none">
         <div className="flex items-start justify-between p-3 sm:p-4 gap-2">
-          <div className="flex items-start gap-2 pointer-events-auto">
+          <div className="flex items-start gap-1.5 sm:gap-2 pointer-events-auto">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="flex-shrink-0 p-2.5 rounded-lg bg-card border border-border shadow-sm text-foreground hover:bg-secondary transition-colors"
+              className="flex-shrink-0 p-3 sm:p-2.5 rounded-lg bg-card border border-border shadow-sm text-foreground hover:bg-secondary active:bg-secondary transition-colors"
               aria-label="Toggle place list"
             >
               <List className="w-4 h-4" />
             </button>
             {searchOpen ? (
-              <div className="flex items-center gap-1 bg-card/95 backdrop-blur-sm rounded-lg border border-border shadow-sm px-2 py-1.5">
+              <div className="flex items-center gap-1 bg-card/95 backdrop-blur-sm rounded-lg border border-border shadow-sm px-3 py-2 sm:px-2 sm:py-1.5">
                 <Search className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                 <input
                   autoFocus
@@ -255,14 +255,14 @@ const MapView = () => {
                   placeholder="Search places..."
                   className="bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none w-36 sm:w-48"
                 />
-                <button onClick={() => { setSearchOpen(false); setSearchQuery(""); }} className="p-0.5 hover:bg-secondary rounded">
-                  <X className="w-3.5 h-3.5 text-muted-foreground" />
+                <button onClick={() => { setSearchOpen(false); setSearchQuery(""); }} className="p-1 hover:bg-secondary rounded">
+                  <X className="w-4 h-4 text-muted-foreground" />
                 </button>
               </div>
             ) : (
               <button
                 onClick={() => setSearchOpen(true)}
-                className="p-2.5 rounded-lg bg-card border border-border shadow-sm text-foreground hover:bg-secondary transition-colors"
+                className="p-3 sm:p-2.5 rounded-lg bg-card border border-border shadow-sm text-foreground hover:bg-secondary active:bg-secondary transition-colors"
                 aria-label="Search"
               >
                 <Search className="w-4 h-4" />
@@ -284,10 +284,10 @@ const MapView = () => {
         <div className="flex gap-1.5">
           <button
             onClick={() => setShowNeighborhoods(!showNeighborhoods)}
-            className={`p-2.5 rounded-lg border shadow-sm transition-colors ${
+            className={`p-3 sm:p-2.5 rounded-lg border shadow-sm transition-colors ${
               showNeighborhoods
                 ? "bg-primary text-primary-foreground border-primary"
-                : "bg-card text-foreground border-border hover:bg-secondary"
+                : "bg-card text-foreground border-border hover:bg-secondary active:bg-secondary"
             }`}
             aria-label="Toggle neighborhoods"
             title="Show neighborhoods"
@@ -296,10 +296,10 @@ const MapView = () => {
           </button>
           <button
             onClick={() => setFiltersOpen(!filtersOpen)}
-            className={`p-2.5 rounded-lg border shadow-sm transition-colors ${
+            className={`p-3 sm:p-2.5 rounded-lg border shadow-sm transition-colors ${
               filtersOpen
                 ? "bg-primary text-primary-foreground border-primary"
-                : "bg-card text-foreground border-border hover:bg-secondary"
+                : "bg-card text-foreground border-border hover:bg-secondary active:bg-secondary"
             }`}
             aria-label="Toggle filters"
           >
