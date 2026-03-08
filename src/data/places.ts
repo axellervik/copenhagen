@@ -157,6 +157,45 @@ export const places: Place[] = [
     website: "https://www.beyla.dk/",
     tags: ["organic", "natural wine", "plant-based"],
   },
+  {
+    id: "torvehallerne",
+    name: "Torvehallerne",
+    category: "lunch",
+    lat: 55.6839,
+    lng: 12.5711,
+    description:
+      "Covered food market near Nørreport station with tons of snack and lunch spots. Try Hav — a fishmonger where you can build your own delicious fish salad platter.",
+    neighborhood: "Indre By",
+    priceLevel: 2,
+    googleMapsUrl: "https://maps.app.goo.gl/gizWhg7nLLBqGx829",
+    tags: ["food market", "fish", "variety"],
+  },
+  {
+    id: "palae-bar",
+    name: "Palæ Bar",
+    category: "lunch",
+    lat: 55.6777,
+    lng: 12.5857,
+    description:
+      "Central but not on the tourist trail. Walk into their kitchen and serve yourself authentic, inexpensive smørrebrød (open sandwiches). Warm service.",
+    neighborhood: "Indre By",
+    priceLevel: 1,
+    googleMapsUrl: "https://maps.app.goo.gl/yaJNGmLeKZXbtdAN9",
+    tags: ["smørrebrød", "self-serve", "hidden gem"],
+  },
+  {
+    id: "mad-kaffe",
+    name: "Mad & Kaffe",
+    category: "lunch",
+    lat: 55.6672,
+    lng: 12.5533,
+    description:
+      "A solid choice for a hungover brunch in Vesterbro. Build your own brunch plate from a selection of small dishes.",
+    neighborhood: "Vesterbro",
+    priceLevel: 2,
+    googleMapsUrl: "https://goo.gl/maps/317oLjxXenaPGEjV8",
+    tags: ["brunch", "build-your-own"],
+  },
 
   // Dinner — Christianshavn
   {
