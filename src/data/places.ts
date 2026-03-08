@@ -525,8 +525,8 @@ export const places: Place[] = [
       "Best evening vibes as the sun sets over the harbour. Wild ales and sours in an industrial waterfront setting at Refshaleøen.",
     neighborhood: "Refshaleøen",
     priceLevel: 2,
-    googleMapsUrlbeer bar", ": "https://goo.gl/maps/Tc6ywRo5M25KzLQu5",
-    tags: ["craft beer", "sunset", "waterfront"],
+    googleMapsUrl: "https://goo.gl/maps/Tc6ywRo5M25KzLQu5",
+    tags: ["beer bar", "craft beer", "sunset", "waterfront"],
   },
   {
     id: "byens-kro",
