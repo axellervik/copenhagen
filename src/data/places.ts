@@ -6,7 +6,7 @@ export type PlaceCategory =
   | "cafe"
   | "attraction"
   | "museum"
-  | "sun-spot";
+  | "swimming";
 
 export interface Place {
   id: string;
@@ -33,7 +33,7 @@ export const CATEGORY_CONFIG: Record<
   cafe: { label: "Café", emoji: "☕", color: "hsl(25, 70%, 48%)" },
   attraction: { label: "Attraction", emoji: "🏛️", color: "hsl(210, 70%, 50%)" },
   museum: { label: "Museum", emoji: "🎨", color: "hsl(330, 65%, 50%)" },
-  "sun-spot": { label: "Sun Spot", emoji: "☀️", color: "hsl(50, 90%, 50%)" },
+  swimming: { label: "Swimming", emoji: "🏊", color: "hsl(195, 80%, 50%)" },
 };
 
 export const places: Place[] = [
@@ -478,11 +478,38 @@ export const places: Place[] = [
     tags: ["craft beer", "sunset", "waterfront"],
   },
 
-  // Sun spots
+  // Swimming
+  {
+    id: "islands-brygge",
+    name: "Islands Brygge Harbour Bath",
+    category: "swimming",
+    lat: 55.66852,
+    lng: 12.57751,
+    description:
+      "Copenhagen's most popular harbour bath. Five pools right on the waterfront — great for evening sun. Grab a cold 6-pack of Tuborg Grøn and sit on the harbour. Quintessential Copenhagen.",
+    neighborhood: "Islands Brygge",
+    priceLevel: 1,
+    googleMapsUrl: "https://maps.app.goo.gl/KZ5arMxkNBSeitNcA",
+    tags: ["harbour bath", "swimming", "evening sun"],
+  },
+  {
+    id: "voldgaarden-canal",
+    name: "Voldgården / Hammershøis Kaj Canal",
+    category: "swimming",
+    lat: 55.67210,
+    lng: 12.58490,
+    description:
+      "Swim in the canal between Voldgården and Hammershøis Kaj in Christianshavn. A local favourite — less crowded than the harbour baths and beautifully set between historic buildings.",
+    neighborhood: "Christianshavn",
+    priceLevel: 1,
+    tags: ["canal swimming", "local spot", "christianshavn"],
+  },
+
+  // Attractions
   {
     id: "la-banchina",
     name: "La Banchina",
-    category: "sun-spot",
+    category: "attraction",
     lat: 55.6888,
     lng: 12.6085,
     description:
@@ -495,7 +522,7 @@ export const places: Place[] = [
   {
     id: "reffen",
     name: "Reffen",
-    category: "sun-spot",
+    category: "attraction",
     lat: 55.6930,
     lng: 12.6100,
     description:
@@ -506,22 +533,9 @@ export const places: Place[] = [
     tags: ["street food", "waterfront", "seasonal"],
   },
   {
-    id: "islands-brygge",
-    name: "Islands Brygge Harbour Bath",
-    category: "sun-spot",
-    lat: 55.6633,
-    lng: 12.5834,
-    description:
-      "Great for evening sun. Grab a cold 6-pack of Tuborg Grøn from any supermarket and sit on the harbour watching people swim. Quintessential Copenhagen.",
-    neighborhood: "Islands Brygge",
-    priceLevel: 1,
-    googleMapsUrl: "https://maps.app.goo.gl/KZ5arMxkNBSeitNcA",
-    tags: ["harbour bath", "swimming", "evening sun"],
-  },
-  {
     id: "kayak-bar",
     name: "Kayak Bar",
-    category: "sun-spot",
+    category: "attraction",
     lat: 55.6740,
     lng: 12.5840,
     description:
