@@ -32,6 +32,7 @@ export const CATEGORY_CONFIG: Record<
   bar: { label: "Bar", emoji: "🍺", color: "hsl(270, 60%, 55%)" },
   cafe: { label: "Café", emoji: "☕", color: "hsl(25, 70%, 48%)" },
   attraction: { label: "Attraction", emoji: "🏛️", color: "hsl(210, 70%, 50%)" },
+  museum: { label: "Museum", emoji: "🎨", color: "hsl(330, 65%, 50%)" },
   "sun-spot": { label: "Sun Spot", emoji: "☀️", color: "hsl(50, 90%, 50%)" },
 };
 
