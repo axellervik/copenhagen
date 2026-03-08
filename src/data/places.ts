@@ -774,7 +774,7 @@ export const places: Place[] = [
   {
     id: "la-banchina",
     name: "La Banchina",
-    category: "attraction",
+    category: "swimming",
     lat: 55.6888,
     lng: 12.6085,
     description:
