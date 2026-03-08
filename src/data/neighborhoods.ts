@@ -4,6 +4,7 @@ export interface Neighborhood {
   description: string;
   color: string;
   polygon: [number, number][];
+  labelOffset?: [number, number]; // [lat offset, lng offset] from centroid
 }
 
 export const NEIGHBORHOODS: Neighborhood[] = [
