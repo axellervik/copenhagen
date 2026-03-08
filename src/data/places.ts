@@ -497,9 +497,10 @@ export const places: Place[] = [
     lng: 12.5531,
     description:
       "Multi-level cocktail bar in a beautiful old pharmacy. Intimate whisky bar on the top floor. One of Copenhagen's best cocktail spots.",
-    neighborhood: "Ves bar", "whisky bar  priceLevel: 3,
-    goog bar", "whisky bar"https://goo.gl/maps/yCwt bar", "whisky baru9",
-    tags: ["cocktails", "whisky", "atmospheric"],
+    neighborhood: "Vesterbro",
+    priceLevel: 3,
+    googleMapsUrl: "https://goo.gl/maps/yCwtJPeKegLPVVDu9",
+    tags: ["cocktail bar", "whisky bar", "atmospheric"],
   },
   {
     id: "bo-bi-bar",
