@@ -287,7 +287,7 @@ export const places: Place[] = [
   {
     id: "det-lille-apotek",
     name: "Det Lille Apotek",
-    category: "dinner",
+    category: "lunch",
     lat: 55.68038,
     lng: 12.57463,
     description: "Köpenhamns äldsta restaurang, traditionell dansk husmanskost och smörrebröd. 100–150 DKK per rätt.",
