@@ -189,8 +189,11 @@ const MapView = () => {
         dashArray: "6 4",
       }).addTo(group);
 
-      // Add label at centroid
+      // Add label at centroid (with optional offset)
       const center = polygon.getBounds().getCenter();
+      const labelPos = n.labelOffset
+        ? L.latLng(center.lat + n.labelOffset[0], center.lng + n.labelOffset[1])
+        : center;
       const label = L.divIcon({
         className: "neighborhood-label",
         html: `<div style="
@@ -205,7 +208,7 @@ const MapView = () => {
         iconSize: [0, 0],
         iconAnchor: [0, 0],
       });
-      L.marker(center, { icon: label, interactive: false }).addTo(group);
+      L.marker(labelPos, { icon: label, interactive: false }).addTo(group);
     });
 
     neighborhoodLayersRef.current = group;
