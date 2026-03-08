@@ -998,19 +998,6 @@ export const places: Place[] = [
     tags: ["shopping", "pedestrian", "free", "walking"],
   },
   {
-    id: "absalon",
-    name: "Folkehuset Absalon",
-    category: "attraction",
-    lat: 55.66680,
-    lng: 12.55080,
-    description:
-      "A former church turned community house in Vesterbro. Famous for its communal dinners (fællesspisning) where hundreds of strangers eat together at long tables. Also hosts concerts, flea markets, yoga, and dancing. A truly unique Copenhagen experience.",
-    neighborhood: "Vesterbro",
-    priceLevel: 1,
-    website: "https://absaloncph.dk/",
-    tags: ["community", "communal dining", "church", "events", "free entry"],
-  },
-  {
     id: "christiania",
     name: "Freetown Christiania",
     category: "attraction",
