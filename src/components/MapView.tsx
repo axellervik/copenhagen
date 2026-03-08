@@ -1,8 +1,7 @@
-import { useState, useCallback, useMemo } from "react";
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import { useState, useCallback, useMemo, useEffect, useRef } from "react";
+import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { places, Place, PlaceCategory, CATEGORY_CONFIG, COPENHAGEN_CENTER } from "@/data/places";
-import PlaceMarker from "./PlaceMarker";
 import PlaceDetail from "./PlaceDetail";
 import CategoryFilter from "./CategoryFilter";
 import ThemeToggle, { MapTheme } from "./ThemeToggle";
@@ -30,15 +29,36 @@ const THEME_CLASSES: Record<MapTheme, string> = {
   satellite: "theme-satellite",
 };
 
-function FlyToPlace({ place }: { place: Place | null }) {
-  const map = useMap();
-  if (place) {
-    map.flyTo([place.lat, place.lng], 15, { duration: 0.8 });
-  }
-  return null;
-}
+const createIcon = (place: Place, isSelected: boolean) => {
+  const config = CATEGORY_CONFIG[place.category];
+  const size = isSelected ? 40 : 32;
+
+  return L.divIcon({
+    className: `place-marker ${isSelected ? "marker-active" : ""}`,
+    html: `<div style="
+      width: ${size}px;
+      height: ${size}px;
+      border-radius: 50%;
+      background: ${config.color};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: ${isSelected ? 20 : 16}px;
+      box-shadow: ${isSelected ? "0 0 0 3px white, 0 4px 16px -2px rgba(0,0,0,0.3)" : "0 2px 8px -2px rgba(0,0,0,0.2)"};
+      cursor: pointer;
+      transition: all 0.2s ease;
+    ">${config.emoji}</div>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  });
+};
 
 const MapView = () => {
+  const mapRef = useRef<L.Map | null>(null);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+  const tileLayerRef = useRef<L.TileLayer | null>(null);
+  const markersRef = useRef<Map<string, L.Marker>>(new Map());
+
   const [theme, setTheme] = useState<MapTheme>("minimal");
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
   const [activeCategories, setActiveCategories] = useState<Set<PlaceCategory>>(
@@ -68,39 +88,81 @@ const MapView = () => {
     setSidebarOpen(false);
   }, []);
 
-  const tileConfig = TILE_URLS[theme];
+  // Initialize map
+  useEffect(() => {
+    if (!mapContainerRef.current || mapRef.current) return;
+
+    const map = L.map(mapContainerRef.current, {
+      center: [COPENHAGEN_CENTER.lat, COPENHAGEN_CENTER.lng],
+      zoom: 13,
+      zoomControl: true,
+    });
+
+    const tileConfig = TILE_URLS.minimal;
+    tileLayerRef.current = L.tileLayer(tileConfig.url, {
+      attribution: tileConfig.attribution,
+      maxZoom: 19,
+    }).addTo(map);
+
+    mapRef.current = map;
+
+    return () => {
+      map.remove();
+      mapRef.current = null;
+    };
+  }, []);
+
+  // Update tile layer on theme change
+  useEffect(() => {
+    if (!mapRef.current) return;
+    const tileConfig = TILE_URLS[theme];
+
+    if (tileLayerRef.current) {
+      tileLayerRef.current.remove();
+    }
+
+    tileLayerRef.current = L.tileLayer(tileConfig.url, {
+      attribution: tileConfig.attribution,
+      maxZoom: 19,
+    }).addTo(mapRef.current);
+  }, [theme]);
+
+  // Update markers
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    // Remove old markers
+    markersRef.current.forEach((marker) => marker.remove());
+    markersRef.current.clear();
+
+    // Add new markers
+    filteredPlaces.forEach((place) => {
+      const isSelected = selectedPlace?.id === place.id;
+      const marker = L.marker([place.lat, place.lng], {
+        icon: createIcon(place, isSelected),
+      })
+        .on("click", () => setSelectedPlace(place))
+        .addTo(mapRef.current!);
+
+      markersRef.current.set(place.id, marker);
+    });
+  }, [filteredPlaces, selectedPlace]);
+
+  // Fly to selected place
+  useEffect(() => {
+    if (!mapRef.current || !selectedPlace) return;
+    mapRef.current.flyTo([selectedPlace.lat, selectedPlace.lng], 15, { duration: 0.8 });
+  }, [selectedPlace]);
 
   return (
     <div className={`relative w-full h-screen overflow-hidden ${THEME_CLASSES[theme]}`}>
-      <MapContainer
-        center={[COPENHAGEN_CENTER.lat, COPENHAGEN_CENTER.lng]}
-        zoom={13}
-        className="w-full h-full"
-        zoomControl={true}
-      >
-        <TileLayer
-          key={theme}
-          url={tileConfig.url}
-          attribution={tileConfig.attribution}
-          maxZoom={19}
-        />
-        {filteredPlaces.map((place) => (
-          <PlaceMarker
-            key={place.id}
-            place={place}
-            isSelected={selectedPlace?.id === place.id}
-            onClick={setSelectedPlace}
-          />
-        ))}
-        <FlyToPlace place={selectedPlace} />
-      </MapContainer>
+      <div ref={mapContainerRef} className="w-full h-full" />
 
       {theme === "satellite" && <div className="satellite-filter" />}
 
       {/* Top bar with title + filters */}
       <div className="absolute top-0 left-0 right-0 z-[1000] pointer-events-none">
         <div className="flex items-start justify-between p-3 sm:p-4 gap-2">
-          {/* List toggle + filters */}
           <div className="flex items-start gap-2 pointer-events-auto flex-1 min-w-0">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -112,7 +174,6 @@ const MapView = () => {
             <CategoryFilter activeCategories={activeCategories} onToggle={toggleCategory} />
           </div>
 
-          {/* Title */}
           <div className="pointer-events-auto flex-shrink-0">
             <h1 className="text-sm sm:text-lg font-bold text-foreground bg-card/90 backdrop-blur-sm rounded-lg px-3 py-2 border border-border shadow-sm font-display">
               🇩🇰 Copenhagen Guide
@@ -123,7 +184,6 @@ const MapView = () => {
 
       <ThemeToggle theme={theme} onChange={setTheme} />
 
-      {/* Sidebar */}
       <PlaceListSidebar
         places={filteredPlaces}
         selectedPlace={selectedPlace}
@@ -132,7 +192,6 @@ const MapView = () => {
         onToggle={() => setSidebarOpen(!sidebarOpen)}
       />
 
-      {/* Detail panel */}
       <PlaceDetail place={selectedPlace} onClose={() => setSelectedPlace(null)} />
     </div>
   );
