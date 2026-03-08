@@ -2,11 +2,12 @@ import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { allPlaces, Place, PlaceCategory, CATEGORY_CONFIG, COPENHAGEN_CENTER } from "@/data/places";
+import { NEIGHBORHOODS, Neighborhood } from "@/data/neighborhoods";
 import PlaceDetail from "./PlaceDetail";
 import CategoryFilter from "./CategoryFilter";
 import ThemeToggle, { MapTheme } from "./ThemeToggle";
 import PlaceListSidebar from "./PlaceListSidebar";
-import { List, Search, X, Filter } from "lucide-react";
+import { List, Search, X, Filter, MapPin } from "lucide-react";
 
 const TILE_URLS: Record<MapTheme, { url: string; attribution: string }> = {
   minimal: {
@@ -58,6 +59,7 @@ const MapView = () => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const tileLayerRef = useRef<L.TileLayer | null>(null);
   const markersRef = useRef<Map<string, L.Marker>>(new Map());
+  const neighborhoodLayersRef = useRef<L.LayerGroup | null>(null);
 
   const [theme, setTheme] = useState<MapTheme>("minimal");
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
@@ -68,6 +70,7 @@ const MapView = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(true);
+  const [showNeighborhoods, setShowNeighborhoods] = useState(true);
 
   const toggleCategory = useCallback((cat: PlaceCategory) => {
     setActiveCategories((prev) => {
@@ -163,6 +166,51 @@ const MapView = () => {
     });
   }, [filteredPlaces, selectedPlace]);
 
+  // Neighborhood overlays
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    if (neighborhoodLayersRef.current) {
+      neighborhoodLayersRef.current.remove();
+      neighborhoodLayersRef.current = null;
+    }
+
+    if (!showNeighborhoods) return;
+
+    const group = L.layerGroup().addTo(mapRef.current);
+
+    NEIGHBORHOODS.forEach((n) => {
+      // Parse HSL to get rgba with low opacity
+      const polygon = L.polygon(n.polygon, {
+        color: n.color,
+        weight: 2,
+        fillColor: n.color,
+        fillOpacity: 0.15,
+        dashArray: "6 4",
+      }).addTo(group);
+
+      // Add label at centroid
+      const center = polygon.getBounds().getCenter();
+      const label = L.divIcon({
+        className: "neighborhood-label",
+        html: `<div style="
+          font-size: 13px;
+          font-weight: 700;
+          color: ${n.color};
+          text-shadow: 0 0 6px white, 0 0 12px white, 0 0 3px white;
+          white-space: nowrap;
+          pointer-events: none;
+          letter-spacing: 0.5px;
+        ">${n.name}</div>`,
+        iconSize: [0, 0],
+        iconAnchor: [0, 0],
+      });
+      L.marker(center, { icon: label, interactive: false }).addTo(group);
+    });
+
+    neighborhoodLayersRef.current = group;
+  }, [showNeighborhoods]);
+
   // Fly to selected place
   useEffect(() => {
     if (!mapRef.current || !selectedPlace) return;
@@ -222,17 +270,31 @@ const MapView = () => {
 
       {/* Vertical category filters panel — top right under title */}
       <div className="absolute top-14 sm:top-16 right-3 sm:right-4 z-[1000] flex flex-col items-end gap-2">
-        <button
-          onClick={() => setFiltersOpen(!filtersOpen)}
-          className={`p-2.5 rounded-lg border shadow-sm transition-colors ${
-            filtersOpen
-              ? "bg-primary text-primary-foreground border-primary"
-              : "bg-card text-foreground border-border hover:bg-secondary"
-          }`}
-          aria-label="Toggle filters"
-        >
-          <Filter className="w-4 h-4" />
-        </button>
+        <div className="flex gap-1.5">
+          <button
+            onClick={() => setShowNeighborhoods(!showNeighborhoods)}
+            className={`p-2.5 rounded-lg border shadow-sm transition-colors ${
+              showNeighborhoods
+                ? "bg-primary text-primary-foreground border-primary"
+                : "bg-card text-foreground border-border hover:bg-secondary"
+            }`}
+            aria-label="Toggle neighborhoods"
+            title="Show neighborhoods"
+          >
+            <MapPin className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => setFiltersOpen(!filtersOpen)}
+            className={`p-2.5 rounded-lg border shadow-sm transition-colors ${
+              filtersOpen
+                ? "bg-primary text-primary-foreground border-primary"
+                : "bg-card text-foreground border-border hover:bg-secondary"
+            }`}
+            aria-label="Toggle filters"
+          >
+            <Filter className="w-4 h-4" />
+          </button>
+        </div>
         {filtersOpen && (
           <div className="bg-card/95 backdrop-blur-sm border border-border rounded-lg shadow-md p-2 flex flex-col gap-1">
             <CategoryFilter activeCategories={activeCategories} onToggle={toggleCategory} vertical />
