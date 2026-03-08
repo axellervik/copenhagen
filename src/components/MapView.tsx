@@ -6,7 +6,7 @@ import PlaceDetail from "./PlaceDetail";
 import CategoryFilter from "./CategoryFilter";
 import ThemeToggle, { MapTheme } from "./ThemeToggle";
 import PlaceListSidebar from "./PlaceListSidebar";
-import { List } from "lucide-react";
+import { List, Search, X } from "lucide-react";
 
 const TILE_URLS: Record<MapTheme, { url: string; attribution: string }> = {
   minimal: {
@@ -65,6 +65,8 @@ const MapView = () => {
     new Set(Object.keys(CATEGORY_CONFIG) as PlaceCategory[])
   );
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const toggleCategory = useCallback((cat: PlaceCategory) => {
     setActiveCategories((prev) => {
@@ -79,8 +81,18 @@ const MapView = () => {
   }, []);
 
   const filteredPlaces = useMemo(
-    () => allPlaces.filter((p) => activeCategories.has(p.category)),
-    [activeCategories]
+    () => allPlaces.filter((p) => {
+      if (!activeCategories.has(p.category)) return false;
+      if (!searchQuery.trim()) return true;
+      const q = searchQuery.toLowerCase();
+      return (
+        p.name.toLowerCase().includes(q) ||
+        p.neighborhood.toLowerCase().includes(q) ||
+        p.tags?.some((t) => t.toLowerCase().includes(q)) ||
+        p.description.toLowerCase().includes(q)
+      );
+    }),
+    [activeCategories, searchQuery]
   );
 
   const handleSelectPlace = useCallback((place: Place) => {
@@ -174,9 +186,32 @@ const MapView = () => {
             <CategoryFilter activeCategories={activeCategories} onToggle={toggleCategory} />
           </div>
 
-          <div className="pointer-events-auto flex-shrink-0">
+          <div className="pointer-events-auto flex-shrink-0 flex items-start gap-2">
+            {searchOpen ? (
+              <div className="flex items-center gap-1 bg-card/95 backdrop-blur-sm rounded-lg border border-border shadow-sm px-2 py-1.5">
+                <Search className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                <input
+                  autoFocus
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search places..."
+                  className="bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none w-36 sm:w-48"
+                />
+                <button onClick={() => { setSearchOpen(false); setSearchQuery(""); }} className="p-0.5 hover:bg-secondary rounded">
+                  <X className="w-3.5 h-3.5 text-muted-foreground" />
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => setSearchOpen(true)}
+                className="p-2.5 rounded-lg bg-card border border-border shadow-sm text-foreground hover:bg-secondary transition-colors"
+                aria-label="Search"
+              >
+                <Search className="w-4 h-4" />
+              </button>
+            )}
             <h1 className="text-sm sm:text-lg font-bold text-foreground bg-card/90 backdrop-blur-sm rounded-lg px-3 py-2 border border-border shadow-sm font-display">
-              🇩🇰 Copenhagen Guide
+              🇩🇰 København
             </h1>
           </div>
         </div>
