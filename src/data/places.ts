@@ -1027,8 +1027,8 @@ export const places: Place[] = [
     id: "prag",
     name: "Prag",
     category: "vintage",
-    lat: 55.66405,
-    lng: 12.55195,
+    lat: 55.6668,
+    lng: 12.5600,
     description:
       "The big green building in Kødbyen — a massive vintage and creative hub across multiple floors. Clothing, furniture, records, and quirky finds. A Vesterbro institution.",
     neighborhood: "Kødbyen",
