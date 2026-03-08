@@ -467,8 +467,8 @@ export const places: Place[] = [
     id: "fermentoren",
     name: "Fermentoren",
     category: "bar",
-    lat: 55.6658,
-    lng: 12.5495,
+    lat: 55.66576,
+    lng: 12.55006,
     description:
       "Almost unbeatable selection of beers and a slightly grungy vibe. The bar is candle-lit because the owner had decision paralysis about lighting!",
     neighborhood: "Vesterbro",
