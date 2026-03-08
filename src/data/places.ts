@@ -362,32 +362,6 @@ export const places: Place[] = [
 
   // Attractions
   {
-    id: "torvaldsen-museum",
-    name: "Thorvaldsens Museum",
-    category: "attraction",
-    lat: 55.6759,
-    lng: 12.5772,
-    description:
-      "A gem hidden in plain sight right next to parliament. Beautiful neoclassical building housing the works of sculptor Bertel Thorvaldsen.",
-    neighborhood: "Indre By",
-    priceLevel: 1,
-    googleMapsUrl: "https://maps.app.goo.gl/nKGcY1ryMbL6NzLJ8",
-    tags: ["museum", "sculpture", "neoclassical"],
-  },
-  {
-    id: "louisiana",
-    name: "Louisiana Museum of Modern Art",
-    category: "attraction",
-    lat: 55.8830,
-    lng: 12.5420,
-    description:
-      "A world-class museum of modern art on the coast north of Copenhagen. The building and sculpture garden are as stunning as the art.",
-    neighborhood: "Humlebæk",
-    priceLevel: 2,
-    googleMapsUrl: "https://maps.app.goo.gl/gxZQVRZpjpreZMWX8",
-    tags: ["modern art", "coast", "world-class"],
-  },
-  {
     id: "copenhill",
     name: "Copenhill (Amager Bakke)",
     category: "attraction",
@@ -401,5 +375,9 @@ export const places: Place[] = [
     tags: ["views", "architecture", "ski slope"],
   },
 ];
+
+// Import and merge museum data
+import { museums } from "./museums";
+export const allPlaces: Place[] = [...places, ...museums];
 
 export const COPENHAGEN_CENTER = { lat: 55.6761, lng: 12.5683 };
