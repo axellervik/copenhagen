@@ -493,8 +493,8 @@ export const places: Place[] = [
     id: "lidkoeb",
     name: "Lidkoeb",
     category: "bar",
-    lat: 55.6673,
-    lng: 12.5531,
+    lat: 55.67122,
+    lng: 12.55614,
     description:
       "Multi-level cocktail bar in a beautiful old pharmacy. Intimate whisky bar on the top floor. One of Copenhagen's best cocktail spots.",
     neighborhood: "Vesterbro",
