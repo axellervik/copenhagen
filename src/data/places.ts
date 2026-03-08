@@ -497,7 +497,7 @@ export const places: Place[] = [
     name: "Voldgården / Hammershøis Kaj Canal",
     category: "swimming",
     lat: 55.67120,
-    lng: 12.58420,
+    lng: 12.58550,
     description:
       "Swim in the canal between Voldgården and Hammershøis Kaj in Christianshavn. A local favourite — less crowded than the harbour baths and beautifully set between historic buildings.",
     neighborhood: "Christianshavn",
