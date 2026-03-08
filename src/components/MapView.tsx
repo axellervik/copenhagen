@@ -2,11 +2,12 @@ import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { allPlaces, Place, PlaceCategory, CATEGORY_CONFIG, COPENHAGEN_CENTER } from "@/data/places";
+import { NEIGHBORHOODS, Neighborhood } from "@/data/neighborhoods";
 import PlaceDetail from "./PlaceDetail";
 import CategoryFilter from "./CategoryFilter";
 import ThemeToggle, { MapTheme } from "./ThemeToggle";
 import PlaceListSidebar from "./PlaceListSidebar";
-import { List, Search, X, Filter } from "lucide-react";
+import { List, Search, X, Filter, MapPin } from "lucide-react";
 
 const TILE_URLS: Record<MapTheme, { url: string; attribution: string }> = {
   minimal: {
