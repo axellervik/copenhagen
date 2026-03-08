@@ -9,7 +9,7 @@ const CategoryFilter = ({ activeCategories, onToggle }: CategoryFilterProps) => 
   const categories = Object.entries(CATEGORY_CONFIG) as [PlaceCategory, typeof CATEGORY_CONFIG[PlaceCategory]][];
 
   return (
-    <div className="absolute top-4 left-4 z-[1000] flex flex-wrap gap-1.5 max-w-[calc(100%-2rem)] sm:max-w-md">
+    <div className="flex flex-wrap gap-1.5 max-w-full">
       {categories.map(([key, config]) => {
         const active = activeCategories.has(key);
         return (
@@ -17,7 +17,7 @@ const CategoryFilter = ({ activeCategories, onToggle }: CategoryFilterProps) => 
             key={key}
             onClick={() => onToggle(key)}
             className={`
-              flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+              flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-medium
               border transition-all duration-200 cursor-pointer select-none
               ${
                 active
@@ -26,8 +26,8 @@ const CategoryFilter = ({ activeCategories, onToggle }: CategoryFilterProps) => 
               }
             `}
           >
-            <span>{config.emoji}</span>
-            <span className="hidden sm:inline">{config.label}</span>
+            <span className="text-sm">{config.emoji}</span>
+            <span className="hidden md:inline">{config.label}</span>
           </button>
         );
       })}

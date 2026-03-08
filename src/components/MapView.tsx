@@ -6,6 +6,8 @@ import PlaceMarker from "./PlaceMarker";
 import PlaceDetail from "./PlaceDetail";
 import CategoryFilter from "./CategoryFilter";
 import ThemeToggle, { MapTheme } from "./ThemeToggle";
+import PlaceListSidebar from "./PlaceListSidebar";
+import { List } from "lucide-react";
 
 const TILE_URLS: Record<MapTheme, { url: string; attribution: string }> = {
   minimal: {
@@ -42,6 +44,7 @@ const MapView = () => {
   const [activeCategories, setActiveCategories] = useState<Set<PlaceCategory>>(
     new Set(Object.keys(CATEGORY_CONFIG) as PlaceCategory[])
   );
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleCategory = useCallback((cat: PlaceCategory) => {
     setActiveCategories((prev) => {
@@ -60,10 +63,15 @@ const MapView = () => {
     [activeCategories]
   );
 
+  const handleSelectPlace = useCallback((place: Place) => {
+    setSelectedPlace(place);
+    setSidebarOpen(false);
+  }, []);
+
   const tileConfig = TILE_URLS[theme];
 
   return (
-    <div className={`relative w-full h-screen ${THEME_CLASSES[theme]}`}>
+    <div className={`relative w-full h-screen overflow-hidden ${THEME_CLASSES[theme]}`}>
       <MapContainer
         center={[COPENHAGEN_CENTER.lat, COPENHAGEN_CENTER.lng]}
         zoom={13}
@@ -89,16 +97,42 @@ const MapView = () => {
 
       {theme === "satellite" && <div className="satellite-filter" />}
 
-      <CategoryFilter activeCategories={activeCategories} onToggle={toggleCategory} />
+      {/* Top bar with title + filters */}
+      <div className="absolute top-0 left-0 right-0 z-[1000] pointer-events-none">
+        <div className="flex items-start justify-between p-3 sm:p-4 gap-2">
+          {/* List toggle + filters */}
+          <div className="flex items-start gap-2 pointer-events-auto flex-1 min-w-0">
+            <button
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="flex-shrink-0 p-2.5 rounded-lg bg-card border border-border shadow-sm text-foreground hover:bg-secondary transition-colors"
+              aria-label="Toggle place list"
+            >
+              <List className="w-4 h-4" />
+            </button>
+            <CategoryFilter activeCategories={activeCategories} onToggle={toggleCategory} />
+          </div>
 
-      {/* Title */}
-      <div className="absolute top-4 right-4 z-[1000] text-right pointer-events-none">
-        <h1 className="text-lg sm:text-xl font-bold text-foreground drop-shadow-sm bg-card/80 backdrop-blur-sm rounded-lg px-3 py-1.5 inline-block border border-border">
-          🇩🇰 Copenhagen Guide
-        </h1>
+          {/* Title */}
+          <div className="pointer-events-auto flex-shrink-0">
+            <h1 className="text-sm sm:text-lg font-bold text-foreground bg-card/90 backdrop-blur-sm rounded-lg px-3 py-2 border border-border shadow-sm font-display">
+              🇩🇰 Copenhagen Guide
+            </h1>
+          </div>
+        </div>
       </div>
 
       <ThemeToggle theme={theme} onChange={setTheme} />
+
+      {/* Sidebar */}
+      <PlaceListSidebar
+        places={filteredPlaces}
+        selectedPlace={selectedPlace}
+        onSelectPlace={handleSelectPlace}
+        isOpen={sidebarOpen}
+        onToggle={() => setSidebarOpen(!sidebarOpen)}
+      />
+
+      {/* Detail panel */}
       <PlaceDetail place={selectedPlace} onClose={() => setSelectedPlace(null)} />
     </div>
   );
