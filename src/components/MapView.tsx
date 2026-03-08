@@ -107,8 +107,10 @@ const MapView = () => {
     const map = L.map(mapContainerRef.current, {
       center: [COPENHAGEN_CENTER.lat, COPENHAGEN_CENTER.lng],
       zoom: 13,
-      zoomControl: true,
+      zoomControl: false,
     });
+
+    L.control.zoom({ position: "bottomright" }).addTo(map);
 
     const tileConfig = TILE_URLS.minimal;
     tileLayerRef.current = L.tileLayer(tileConfig.url, {
