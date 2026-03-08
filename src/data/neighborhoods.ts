@@ -13,6 +13,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Christianshavn",
     description: "Ön med bl.a. Christiania och promenad längs vattnet. Lite utanför centralaste Köpenhamn.",
     color: "hsl(170, 60%, 45%)",
+    labelOffset: [0, -0.006],
     polygon: [
       [55.6780, 12.5870],
       [55.6810, 12.5900],
@@ -111,7 +112,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Christiania",
     description: "The famous freetown — a self-governing community within Christianshavn. Unique architecture, art, and green spaces.",
     color: "hsl(90, 55%, 45%)",
-    labelOffset: [-0.003, 0.005],
+    labelOffset: [0, 0],
     polygon: [
       [55.6735, 12.5950],
       [55.6755, 12.5965],
