@@ -546,6 +546,85 @@ export const places: Place[] = [
     googleMapsUrl: "https://maps.app.goo.gl/EBKfG68zz8bT7Xqj9",
     tags: ["views", "architecture", "ski slope"],
   },
+
+  // Cafés
+  {
+    id: "andersen-bakery",
+    name: "Andersen Bakery",
+    category: "cafe",
+    lat: 55.66723,
+    lng: 12.57848,
+    description:
+      "Award-winning bakery on Islands Brygge founded by a Japanese baker who fell in love with Danish pastries. Beautiful cakes and pastries with a Japanese-Danish twist.",
+    neighborhood: "Islands Brygge",
+    priceLevel: 2,
+    website: "https://andersenbakery.dk/",
+    tags: ["pastries", "japanese-danish", "cakes"],
+  },
+  {
+    id: "minor-coffee",
+    name: "Coffee Minor",
+    category: "cafe",
+    lat: 55.66993,
+    lng: 12.55547,
+    description:
+      "Cosy specialty coffee spot on Istedgade in Vesterbro. Small but perfectly formed — great espresso drinks and a relaxed neighbourhood vibe.",
+    neighborhood: "Vesterbro",
+    priceLevel: 1,
+    tags: ["specialty coffee", "cosy", "neighbourhood"],
+  },
+  {
+    id: "baaden",
+    name: "Båden",
+    category: "cafe",
+    lat: 55.67573,
+    lng: 12.59464,
+    description:
+      "A unique, colourful café right on the water in Christianshavn. Home-baked goods, great coffee, and a sunny terrace by the canal. The grilled cheese croissant is a game-changer.",
+    neighborhood: "Christianshavn",
+    priceLevel: 2,
+    website: "https://www.baadencph.dk/",
+    tags: ["waterfront", "home-baked", "sunny terrace"],
+  },
+  {
+    id: "impact-roasters",
+    name: "Impact Roasters",
+    category: "cafe",
+    lat: 55.66695,
+    lng: 12.50433,
+    description:
+      "Local specialty coffee roastery in Valby with a focus on ethical sourcing and direct trade. Great pour-overs and a welcoming space by Langgade station.",
+    neighborhood: "Valby",
+    priceLevel: 1,
+    website: "https://impactroasters.dk/",
+    tags: ["specialty coffee", "roastery", "ethical"],
+  },
+  {
+    id: "holy-bean",
+    name: "Holy Bean Coffee & Cocktails",
+    category: "cafe",
+    lat: 55.68865,
+    lng: 12.56228,
+    description:
+      "Where coffee meets cocktails — a playful, nerdy spot on Ravnsborggade in Nørrebro. Specialty coffee by day, creative cocktails by night. Zero snobbery.",
+    neighborhood: "Nørrebro",
+    priceLevel: 2,
+    website: "https://holybean.dk/",
+    tags: ["specialty coffee", "cocktails", "evening drinks"],
+  },
+  {
+    id: "the-artisan",
+    name: "The Artisan",
+    category: "cafe",
+    lat: 55.69181,
+    lng: 12.56852,
+    description:
+      "Specialty coffee shop by the lakes (Sortedam Dossering) serving single-estate Peruvian beans roasted in-house. A beautiful spot for a morning coffee walk.",
+    neighborhood: "Nørrebro",
+    priceLevel: 2,
+    website: "https://theartisan.dk/",
+    tags: ["specialty coffee", "micro roastery", "lakeside"],
+  },
 ];
 
 // Import and merge museum data
