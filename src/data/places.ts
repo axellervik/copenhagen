@@ -461,7 +461,7 @@ export const places: Place[] = [
     neighborhood: "Vesterbro",
     priceLevel: 2,
     googleMapsUrl: "https://goo.gl/maps/46HYVd1gsZAa87Aa8",
-    tags: ["sun terrace", "pilsner", "spritz"],
+    tags: ["beer bar", "sun terrace", "pilsner", "spritz"],
   },
   {
     id: "fermentoren",
