@@ -506,8 +506,8 @@ export const places: Place[] = [
     id: "bo-bi-bar",
     name: "Bo-Bi Bar",
     category: "bar",
-    lat: 55.6788,
-    lng: 12.5739,
+    lat: 55.67854,
+    lng: 12.57341,
     description:
       "Possibly the best bodega in Copenhagen. They sell boiled eggs. Taking photos is banned. Order beer by the bottle (flaske).",
     neighborhood: "Indre By",
