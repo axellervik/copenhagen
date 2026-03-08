@@ -79,7 +79,7 @@ const MapView = () => {
   }, []);
 
   const filteredPlaces = useMemo(
-    () => places.filter((p) => activeCategories.has(p.category)),
+    () => allPlaces.filter((p) => activeCategories.has(p.category)),
     [activeCategories]
   );
 
