@@ -284,10 +284,10 @@ const MapView = () => {
         <div className="flex gap-1.5">
           <button
             onClick={() => setShowNeighborhoods(!showNeighborhoods)}
-            className={`p-2.5 rounded-lg border shadow-sm transition-colors ${
+            className={`p-3 sm:p-2.5 rounded-lg border shadow-sm transition-colors ${
               showNeighborhoods
                 ? "bg-primary text-primary-foreground border-primary"
-                : "bg-card text-foreground border-border hover:bg-secondary"
+                : "bg-card text-foreground border-border hover:bg-secondary active:bg-secondary"
             }`}
             aria-label="Toggle neighborhoods"
             title="Show neighborhoods"
@@ -296,10 +296,10 @@ const MapView = () => {
           </button>
           <button
             onClick={() => setFiltersOpen(!filtersOpen)}
-            className={`p-2.5 rounded-lg border shadow-sm transition-colors ${
+            className={`p-3 sm:p-2.5 rounded-lg border shadow-sm transition-colors ${
               filtersOpen
                 ? "bg-primary text-primary-foreground border-primary"
-                : "bg-card text-foreground border-border hover:bg-secondary"
+                : "bg-card text-foreground border-border hover:bg-secondary active:bg-secondary"
             }`}
             aria-label="Toggle filters"
           >
