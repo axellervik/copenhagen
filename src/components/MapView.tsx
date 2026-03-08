@@ -6,7 +6,7 @@ import PlaceDetail from "./PlaceDetail";
 import CategoryFilter from "./CategoryFilter";
 import ThemeToggle, { MapTheme } from "./ThemeToggle";
 import PlaceListSidebar from "./PlaceListSidebar";
-import { List } from "lucide-react";
+import { List, Search, X } from "lucide-react";
 
 const TILE_URLS: Record<MapTheme, { url: string; attribution: string }> = {
   minimal: {
