@@ -166,6 +166,51 @@ const MapView = () => {
     });
   }, [filteredPlaces, selectedPlace]);
 
+  // Neighborhood overlays
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    if (neighborhoodLayersRef.current) {
+      neighborhoodLayersRef.current.remove();
+      neighborhoodLayersRef.current = null;
+    }
+
+    if (!showNeighborhoods) return;
+
+    const group = L.layerGroup().addTo(mapRef.current);
+
+    NEIGHBORHOODS.forEach((n) => {
+      // Parse HSL to get rgba with low opacity
+      const polygon = L.polygon(n.polygon, {
+        color: n.color,
+        weight: 2,
+        fillColor: n.color,
+        fillOpacity: 0.15,
+        dashArray: "6 4",
+      }).addTo(group);
+
+      // Add label at centroid
+      const center = polygon.getBounds().getCenter();
+      const label = L.divIcon({
+        className: "neighborhood-label",
+        html: `<div style="
+          font-size: 13px;
+          font-weight: 700;
+          color: ${n.color};
+          text-shadow: 0 0 6px white, 0 0 12px white, 0 0 3px white;
+          white-space: nowrap;
+          pointer-events: none;
+          letter-spacing: 0.5px;
+        ">${n.name}</div>`,
+        iconSize: [0, 0],
+        iconAnchor: [0, 0],
+      });
+      L.marker(center, { icon: label, interactive: false }).addTo(group);
+    });
+
+    neighborhoodLayersRef.current = group;
+  }, [showNeighborhoods]);
+
   // Fly to selected place
   useEffect(() => {
     if (!mapRef.current || !selectedPlace) return;
