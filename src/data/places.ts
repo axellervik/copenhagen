@@ -698,6 +698,18 @@ export const places: Place[] = [
     website: "https://prologcoffee.com/",
     tags: ["specialty coffee", "waterfront", "papirøen"],
   },
+  {
+    id: "alaska-kaffe",
+    name: "Alaska Kaffe",
+    category: "cafe",
+    lat: 55.67857,
+    lng: 12.56965,
+    description:
+      "Coffee spot on Studiestræde in the Latin Quarter. A relaxed neighbourhood café in the heart of the city.",
+    neighborhood: "Indre By",
+    priceLevel: 1,
+    tags: ["coffee", "latin quarter"],
+  },
 ];
 
 // Import and merge museum data
