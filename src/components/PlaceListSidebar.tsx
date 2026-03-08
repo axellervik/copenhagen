@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { List, X, MapPin } from "lucide-react";
+import { X, MapPin } from "lucide-react";
 import { Place, PlaceCategory, CATEGORY_CONFIG } from "@/data/places";
 
 interface PlaceListSidebarProps {
@@ -17,34 +17,32 @@ const PlaceListSidebar = ({
   isOpen,
   onToggle,
 }: PlaceListSidebarProps) => {
-  // Group places by category
-  const grouped = places.reduce<Record<PlaceCategory, Place[]>>((acc, place) => {
+  const grouped = places.reduce<Partial<Record<PlaceCategory, Place[]>>>((acc, place) => {
     if (!acc[place.category]) acc[place.category] = [];
-    acc[place.category].push(place);
+    acc[place.category]!.push(place);
     return acc;
-  }, {} as Record<PlaceCategory, Place[]>);
+  }, {});
 
   const categories = Object.entries(grouped) as [PlaceCategory, Place[]][];
 
   return (
-    <>
-      {/* Toggle button */}
-      <button
-        onClick={onToggle}
-        className="absolute top-4 left-4 z-[1001] p-2.5 rounded-lg bg-card border border-border shadow-lg text-foreground hover:bg-secondary transition-colors sm:hidden"
-        aria-label={isOpen ? "Close list" : "Open list"}
-      >
-        {isOpen ? <X className="w-5 h-5" /> : <List className="w-5 h-5" />}
-      </button>
-
-      <AnimatePresence>
-        {isOpen && (
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 z-[998] bg-background/20 backdrop-blur-[1px] sm:hidden"
+            onClick={onToggle}
+          />
           <motion.aside
             initial={{ x: "-100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "-100%", opacity: 0 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="absolute left-0 top-0 bottom-0 z-[999] w-80 bg-card border-r border-border shadow-xl overflow-y-auto"
+            className="absolute left-0 top-0 bottom-0 z-[999] w-72 sm:w-80 bg-card border-r border-border shadow-xl overflow-y-auto"
           >
             <div className="sticky top-0 bg-card/95 backdrop-blur-sm border-b border-border px-4 py-3 flex items-center justify-between">
               <h2 className="text-base font-bold text-card-foreground font-display">
@@ -58,7 +56,7 @@ const PlaceListSidebar = ({
               </button>
             </div>
 
-            <div className="p-3 space-y-4">
+            <div className="p-3 space-y-4 pb-20">
               {categories.map(([category, categoryPlaces]) => {
                 const config = CATEGORY_CONFIG[category];
                 return (
@@ -70,7 +68,7 @@ const PlaceListSidebar = ({
                         {categoryPlaces.length}
                       </span>
                     </h3>
-                    <div className="space-y-1">
+                    <div className="space-y-0.5">
                       {categoryPlaces.map((place) => (
                         <button
                           key={place.id}
@@ -101,9 +99,9 @@ const PlaceListSidebar = ({
               })}
             </div>
           </motion.aside>
-        )}
-      </AnimatePresence>
-    </>
+        </>
+      )}
+    </AnimatePresence>
   );
 };
 
