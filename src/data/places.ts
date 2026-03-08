@@ -1,9 +1,9 @@
 export type PlaceCategory =
   | "bakery"
+  | "cafe"
   | "lunch"
   | "dinner"
   | "bar"
-  | "cafe"
   | "attraction"
   | "museum"
   | "swimming"
@@ -28,10 +28,10 @@ export const CATEGORY_CONFIG: Record<
   { label: string; emoji: string; color: string }
 > = {
   bakery: { label: "Bakery", emoji: "🥐", color: "hsl(35, 90%, 55%)" },
+  cafe: { label: "Café", emoji: "☕", color: "hsl(25, 70%, 48%)" },
   lunch: { label: "Lunch / Brunch", emoji: "🥪", color: "hsl(145, 60%, 42%)" },
   dinner: { label: "Dinner", emoji: "🍽️", color: "hsl(0, 72%, 55%)" },
   bar: { label: "Bar", emoji: "🍾", color: "hsl(270, 60%, 55%)" },
-  cafe: { label: "Café", emoji: "☕", color: "hsl(25, 70%, 48%)" },
   attraction: { label: "Attraction", emoji: "🏛️", color: "hsl(210, 70%, 50%)" },
   museum: { label: "Museum", emoji: "🎨", color: "hsl(330, 65%, 50%)" },
   swimming: { label: "Swimming", emoji: "🏊", color: "hsl(195, 80%, 50%)" },
