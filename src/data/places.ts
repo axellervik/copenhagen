@@ -461,7 +461,7 @@ export const places: Place[] = [
     neighborhood: "Vesterbro",
     priceLevel: 2,
     googleMapsUrl: "https://goo.gl/maps/46HYVd1gsZAa87Aa8",
-    tags: ["beer bar", "sun terrace", "pilsner", "spritz"],
+    tags: ["beer bar", "beer bar", "sun terrace", "pilsner", "spritz"],
   },
   {
     id: "fermentoren",
@@ -474,7 +474,7 @@ export const places: Place[] = [
     neighborhood: "Vesterbro",
     priceLevel: 2,
     googleMapsUrl: "https://maps.app.goo.gl/TYGVhhSYd4jTnPrk8",
-    tags: ["craft beer", "candle-lit", "grungy"],
+beer bar", "    tags: ["craft beer", "candle-lit", "grungy"],
   },
   {
     id: "warpigs",
