@@ -1024,17 +1024,41 @@ export const places: Place[] = [
 
   // Vintage / Thrift
   {
-    id: "prag",
-    name: "Prag",
+    id: "gronne-genbrugs-hal",
+    name: "Den Grønne Genbrugs Hal",
     category: "vintage",
     lat: 55.66405,
     lng: 12.55195,
     description:
-      "The big green building in Kødbyen — a massive vintage and creative hub across multiple floors. Clothing, furniture, records, and quirky finds. A Vesterbro institution.",
+      "The big green building in Kødbyen — a massive vintage and creative hub across multiple floors. Clothing, furniture, records, and quirky finds. A Vesterbro institution. Also known as Prag.",
     neighborhood: "Kødbyen",
     priceLevel: 1,
     website: "https://www.pfragt.dk/",
     tags: ["vintage", "thrift", "furniture", "records", "multi-floor"],
+  },
+  {
+    id: "norrebro-vintage",
+    name: "Nørrebro Vintage Shops",
+    category: "vintage",
+    lat: 55.68920,
+    lng: 12.55350,
+    description:
+      "Nørrebro is packed with second-hand and vintage shops. Check out Episode, Prag (the Nørrebro location on Nørrebrogade), Wasteland, and various charity shops along Elmegade and Blågårdsgade. Great for an afternoon of treasure hunting.",
+    neighborhood: "Nørrebro",
+    priceLevel: 1,
+    tags: ["vintage", "thrift", "Episode", "Wasteland", "Elmegade"],
+  },
+  {
+    id: "teglgaardstraede-vintage",
+    name: "Teglgårdstræde Vintage Row",
+    category: "vintage",
+    lat: 55.68030,
+    lng: 12.57120,
+    description:
+      "A short street in the Latin Quarter lined with second-hand and vintage shops. Compact but rewarding — you'll find curated vintage clothing, retro furniture, and rare records all within a few doors of each other.",
+    neighborhood: "Indre By",
+    priceLevel: 1,
+    tags: ["vintage", "thrift", "Latin Quarter", "clothing", "records"],
   },
 
   // Cafés
