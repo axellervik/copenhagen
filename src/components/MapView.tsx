@@ -59,6 +59,7 @@ const MapView = () => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const tileLayerRef = useRef<L.TileLayer | null>(null);
   const markersRef = useRef<Map<string, L.Marker>>(new Map());
+  const neighborhoodLayersRef = useRef<L.LayerGroup | null>(null);
 
   const [theme, setTheme] = useState<MapTheme>("minimal");
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
