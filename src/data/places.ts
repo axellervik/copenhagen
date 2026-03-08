@@ -1062,10 +1062,10 @@ export const places: Place[] = [
   },
   {
     id: "teglgaardstraede-vintage",
-    name: "Teglgårdstræde Vintage Row",
+    name: "Indre By Vintage",
     category: "vintage",
     lat: 55.67880,
-    lng: 12.56720,
+    lng: 12.56950,
     description:
       "A short street in the Latin Quarter lined with second-hand and vintage shops. Compact but rewarding — you'll find curated vintage clothing, retro furniture, and rare records all within a few doors of each other.",
     neighborhood: "Indre By",
