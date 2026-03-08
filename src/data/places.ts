@@ -1112,19 +1112,6 @@ export const places: Place[] = [
 
   // Cafés
   {
-    id: "andersen-bakery",
-    name: "Andersen Bakery",
-    category: "cafe",
-    lat: 55.66723,
-    lng: 12.57848,
-    description:
-      "Award-winning bakery on Islands Brygge founded by a Japanese baker who fell in love with Danish pastries. Beautiful cakes and pastries with a Japanese-Danish twist.",
-    neighborhood: "Islands Brygge",
-    priceLevel: 2,
-    website: "https://andersenbakery.dk/",
-    tags: ["pastries", "japanese-danish", "cakes"],
-  },
-  {
     id: "minor-coffee",
     name: "Coffee Minor",
     category: "cafe",
