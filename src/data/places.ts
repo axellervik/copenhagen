@@ -35,7 +35,7 @@ export const CATEGORY_CONFIG: Record<
   attraction: { label: "Attraction", emoji: "🏛️", color: "hsl(210, 70%, 50%)" },
   museum: { label: "Museum", emoji: "🎨", color: "hsl(330, 65%, 50%)" },
   swimming: { label: "Swimming", emoji: "🏊", color: "hsl(195, 80%, 50%)" },
-  vintage: { label: "Vintage / Thrift", emoji: "🛍️", color: "hsl(50, 70%, 45%)" },
+  vintage: { label: "Thrifting", emoji: "🛍️", color: "hsl(50, 70%, 45%)" },
 };
 
 export const places: Place[] = [
