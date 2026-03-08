@@ -30,9 +30,17 @@ const THEME_CLASSES: Record<MapTheme, string> = {
   satellite: "theme-satellite",
 };
 
+const getBarEmoji = (place: Place): string => {
+  const tags = place.tags?.map(t => t.toLowerCase()) || [];
+  if (tags.some(t => t.includes("wine"))) return "🍷";
+  if (tags.some(t => t.includes("cocktail") || t.includes("gin") || t.includes("whisky"))) return "🍸";
+  return "🍺";
+};
+
 const createIcon = (place: Place, isSelected: boolean) => {
   const config = CATEGORY_CONFIG[place.category];
   const size = isSelected ? 40 : 32;
+  const emoji = place.category === "bar" ? getBarEmoji(place) : config.emoji;
 
   return L.divIcon({
     className: `place-marker ${isSelected ? "marker-active" : ""}`,
@@ -48,7 +56,7 @@ const createIcon = (place: Place, isSelected: boolean) => {
       box-shadow: ${isSelected ? "0 0 0 3px white, 0 4px 16px -2px rgba(0,0,0,0.3)" : "0 2px 8px -2px rgba(0,0,0,0.2)"};
       cursor: pointer;
       transition: all 0.2s ease;
-    ">${config.emoji}</div>`,
+    ">${emoji}</div>`,
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
   });
