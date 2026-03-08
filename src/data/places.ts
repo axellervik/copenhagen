@@ -254,7 +254,7 @@ export const places: Place[] = [
   {
     id: "aamanns-1921",
     name: "Aamanns 1921",
-    category: "dinner",
+    category: "lunch",
     lat: 55.68021,
     lng: 12.57591,
     description: "Smørrebrød, restaurang skapad av känd kock. 3-rätters lunchmeny 390 DKK, smörrebröd 135–195 DKK styck.",
