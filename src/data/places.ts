@@ -733,7 +733,6 @@ export const places: Place[] = [
     tags: ["beer bar", "rock & metal", "cheap", "student-friendly"],
   },
 
-
   {
     id: "aaben-brewery",
     name: "Åben Brewery",
@@ -814,6 +813,19 @@ export const places: Place[] = [
   },
 
   // Attractions
+  {
+    id: "folkehuset-absalon",
+    name: "Folkehuset Absalon",
+    category: "attraction",
+    lat: 55.6656,
+    lng: 12.5520,
+    description:
+      "A community house in a former church on Sønder Boulevard. Famous for its communal dinners, dancing, flea markets, and cultural events. A uniquely Danish social experience — welcoming to everyone.",
+    neighborhood: "Vesterbro",
+    priceLevel: 1,
+    website: "https://absaloncph.dk/",
+    tags: ["community", "dinner", "events", "church", "cultural"],
+  },
   {
     id: "copenhill",
     name: "Copenhill (Amager Bakke)",
