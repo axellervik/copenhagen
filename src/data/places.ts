@@ -473,8 +473,8 @@ export const places: Place[] = [
       "Almost unbeatable selection of beers and a slightly grungy vibe. The bar is candle-lit because the owner had decision paralysis about lighting!",
     neighborhood: "Vesterbro",
     priceLevel: 2,
-    googleMapsUrbeer bar", "l: "https://beer bar", "maps.app.goobeer bar", ".gl/TYGVhhSYbeer bar", "d4jTnPrk8",
-beer bar", "    tags: ["craft beer", "candle-lit", "grungy"],
+    googleMapsUrl: "https://maps.app.goo.gl/TYGVhhSYd4jTnPrk8",
+    tags: ["beer bar", "craft beer", "candle-lit", "grungy"],
   },
   {
     id: "warpigs",
