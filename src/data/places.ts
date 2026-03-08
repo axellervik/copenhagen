@@ -787,7 +787,7 @@ export const places: Place[] = [
   {
     id: "reffen",
     name: "Reffen",
-    category: "attraction",
+    category: "dinner",
     lat: 55.6930,
     lng: 12.6100,
     description:
