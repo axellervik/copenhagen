@@ -1024,17 +1024,29 @@ export const places: Place[] = [
 
   // Vintage / Thrift
   {
-    id: "gronne-genbrugs-hal",
-    name: "Den Grønne Genbrugs Hal",
+    id: "prag",
+    name: "Prag",
     category: "vintage",
     lat: 55.66405,
     lng: 12.55195,
     description:
-      "The big green building in Kødbyen — a massive vintage and creative hub across multiple floors. Clothing, furniture, records, and quirky finds. A Vesterbro institution. Also known as Prag.",
+      "The big green building in Kødbyen — a massive vintage and creative hub across multiple floors. Clothing, furniture, records, and quirky finds. A Vesterbro institution.",
     neighborhood: "Kødbyen",
     priceLevel: 1,
     website: "https://www.pfragt.dk/",
     tags: ["vintage", "thrift", "furniture", "records", "multi-floor"],
+  },
+  {
+    id: "gronne-genbrugs-hal",
+    name: "Den Grønne Genbrugs Hal",
+    category: "vintage",
+    lat: 55.67280,
+    lng: 12.59750,
+    description:
+      "A big second-hand hall inside Christiania. Furniture, clothes, books, and all sorts of treasures at very low prices. The ultimate treasure hunt in the freetown.",
+    neighborhood: "Christiania",
+    priceLevel: 1,
+    tags: ["vintage", "thrift", "furniture", "second-hand", "Christiania"],
   },
   {
     id: "norrebro-vintage",
