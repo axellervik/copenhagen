@@ -1052,8 +1052,8 @@ export const places: Place[] = [
     id: "norrebro-vintage",
     name: "Nørrebro Vintage Shops",
     category: "vintage",
-    lat: 55.68370,
-    lng: 12.56600,
+    lat: 55.6832,
+    lng: 12.5725,
     description:
       "Nørrebro is packed with second-hand and vintage shops. Check out Episode, Prag (the Nørrebro location on Nørrebrogade), Wasteland, and various charity shops along Elmegade and Blågårdsgade. Great for an afternoon of treasure hunting.",
     neighborhood: "Nørrebro",
