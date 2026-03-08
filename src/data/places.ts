@@ -5,6 +5,7 @@ export type PlaceCategory =
   | "bar"
   | "cafe"
   | "attraction"
+  | "museum"
   | "sun-spot";
 
 export interface Place {
