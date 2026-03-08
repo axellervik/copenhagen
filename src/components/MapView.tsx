@@ -177,7 +177,7 @@ const MapView = () => {
       {/* Top bar with title + filters */}
       <div className="absolute top-0 left-0 right-0 z-[1000] pointer-events-none">
         <div className="flex items-start justify-between p-3 sm:p-4 gap-2">
-          <div className="flex items-start gap-2 pointer-events-auto flex-1 min-w-0">
+          <div className="flex items-start gap-2 pointer-events-auto">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className="flex-shrink-0 p-2.5 rounded-lg bg-card border border-border shadow-sm text-foreground hover:bg-secondary transition-colors"
@@ -185,10 +185,6 @@ const MapView = () => {
             >
               <List className="w-4 h-4" />
             </button>
-            <CategoryFilter activeCategories={activeCategories} onToggle={toggleCategory} />
-          </div>
-
-          <div className="pointer-events-auto flex-shrink-0 flex items-start gap-2">
             {searchOpen ? (
               <div className="flex items-center gap-1 bg-card/95 backdrop-blur-sm rounded-lg border border-border shadow-sm px-2 py-1.5">
                 <Search className="w-4 h-4 text-muted-foreground flex-shrink-0" />
@@ -212,10 +208,18 @@ const MapView = () => {
                 <Search className="w-4 h-4" />
               </button>
             )}
+          </div>
+
+          <div className="pointer-events-auto flex-shrink-0">
             <h1 className="text-sm sm:text-lg font-bold text-foreground bg-card/90 backdrop-blur-sm rounded-lg px-3 py-2 border border-border shadow-sm font-display">
               🇩🇰 København
             </h1>
           </div>
+        </div>
+
+        {/* Category filters below title, aligned right */}
+        <div className="flex justify-end px-3 sm:px-4 -mt-1 pointer-events-auto">
+          <CategoryFilter activeCategories={activeCategories} onToggle={toggleCategory} />
         </div>
       </div>
 
