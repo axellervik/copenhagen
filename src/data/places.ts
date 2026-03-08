@@ -511,9 +511,9 @@ export const places: Place[] = [
     description:
       "Possibly the best bodega in Copenhagen. They sell boiled eggs. Taking photos is banned. Order beer by the bottle (flaske).",
     neighborhood: "Indre By",
-    priceLeer bar", "bevel: 1,
-    googleMapsUrl: "https://maps.aeer bar", "bpp.goo.gl/w49djh6ZBJPdKtK6A",
-    tags: ["bodega", "boiled eggs", "no photos"],
+    priceLevel: 1,
+    googleMapsUrl: "https://maps.app.goo.gl/w49djh6ZBJPdKtK6A",
+    tags: ["beer bar", "bodega", "boiled eggs", "no photos"],
   },
   {
     id: "mikkeller-baghaven",
