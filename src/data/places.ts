@@ -485,9 +485,9 @@ export const places: Place[] = [
     description:
       "Brewpub serving authentic BBQ alongside great craft beers. Industrial vibes in Kødbyen (the meatpacking district).",
     neighborhood: "Kødbyen",
-eer bar", "b    priceLevel: 2,
-    geer bar", "boogleMapsUrl: "https://meer bar", "baps.app.goo.gl/dpBvSNKaWeer bar", "bXsTmSTJ6",
-    tags: ["brewpub", "BBQ", "industrial"],
+    priceLevel: 2,
+    googleMapsUrl: "https://maps.app.goo.gl/dpBvSNKaWXsTmSTJ6",
+    tags: ["beer bar", "brewpub", "BBQ", "industrial"],
   },
   {
     id: "lidkoeb",
