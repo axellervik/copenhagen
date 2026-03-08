@@ -93,6 +93,31 @@ export const places: Place[] = [
     googleMapsUrl: "https://maps.app.goo.gl/G4e16RDiT1KKxm7N6",
     tags: ["almond croissant", "neighbourhood gem"],
   },
+  {
+    id: "andersen-bakery",
+    name: "Andersen Bakery",
+    category: "bakery",
+    lat: 55.6713,
+    lng: 12.5565,
+    description:
+      "Japanese-Danish fusion bakery with beautiful pastries. Their croissants and Danish-style buns with a Japanese twist are exceptional. Multiple locations across Copenhagen.",
+    neighborhood: "Vesterbro",
+    priceLevel: 2,
+    website: "https://andersen-bakery.dk/",
+    tags: ["Japanese-Danish", "croissants", "pastries"],
+  },
+  {
+    id: "kobenhavns-bageri",
+    name: "Københavns Bageri",
+    category: "bakery",
+    lat: 55.6770,
+    lng: 12.5720,
+    description:
+      "Traditional Danish bakery doing classic baked goods the right way. Proper rugbrød, boller, and wienerbrød — no shortcuts, no gimmicks. A neighbourhood favourite.",
+    neighborhood: "Indre By",
+    priceLevel: 1,
+    tags: ["traditional", "rugbrød", "wienerbrød", "classic Danish"],
+  },
 
   // Lunch / Brunch
   {
