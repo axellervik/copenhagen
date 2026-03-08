@@ -4,6 +4,7 @@ export interface Neighborhood {
   description: string;
   color: string;
   polygon: [number, number][];
+  labelOffset?: [number, number]; // [lat offset, lng offset] from centroid
 }
 
 export const NEIGHBORHOODS: Neighborhood[] = [
@@ -110,6 +111,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     name: "Christiania",
     description: "The famous freetown — a self-governing community within Christianshavn. Unique architecture, art, and green spaces.",
     color: "hsl(90, 55%, 45%)",
+    labelOffset: [-0.003, 0.005],
     polygon: [
       [55.6735, 12.5950],
       [55.6755, 12.5965],
