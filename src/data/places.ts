@@ -454,8 +454,8 @@ export const places: Place[] = [
     id: "riga",
     name: "Riga",
     category: "bar",
-    lat: 55.6668,
-    lng: 12.5530,
+    lat: 55.66694,
+    lng: 12.55251,
     description:
       "Absolute best vibe when the sun is out. Try their custom Pilsner or Spritz on tap. A Vesterbro classic.",
     neighborhood: "Vesterbro",
@@ -467,8 +467,8 @@ export const places: Place[] = [
     id: "fermentoren",
     name: "Fermentoren",
     category: "bar",
-    lat: 55.6658,
-    lng: 12.5495,
+    lat: 55.66576,
+    lng: 12.55006,
     description:
       "Almost unbeatable selection of beers and a slightly grungy vibe. The bar is candle-lit because the owner had decision paralysis about lighting!",
     neighborhood: "Vesterbro",
@@ -480,8 +480,8 @@ export const places: Place[] = [
     id: "warpigs",
     name: "Warpigs Brewpub",
     category: "bar",
-    lat: 55.6635,
-    lng: 12.5557,
+    lat: 55.66459,
+    lng: 12.55395,
     description:
       "Brewpub serving authentic BBQ alongside great craft beers. Industrial vibes in Kødbyen (the meatpacking district).",
     neighborhood: "Kødbyen",
@@ -493,8 +493,8 @@ export const places: Place[] = [
     id: "lidkoeb",
     name: "Lidkoeb",
     category: "bar",
-    lat: 55.6673,
-    lng: 12.5531,
+    lat: 55.67122,
+    lng: 12.55614,
     description:
       "Multi-level cocktail bar in a beautiful old pharmacy. Intimate whisky bar on the top floor. One of Copenhagen's best cocktail spots.",
     neighborhood: "Vesterbro",
@@ -506,8 +506,8 @@ export const places: Place[] = [
     id: "bo-bi-bar",
     name: "Bo-Bi Bar",
     category: "bar",
-    lat: 55.6788,
-    lng: 12.5739,
+    lat: 55.67854,
+    lng: 12.57341,
     description:
       "Possibly the best bodega in Copenhagen. They sell boiled eggs. Taking photos is banned. Order beer by the bottle (flaske).",
     neighborhood: "Indre By",
@@ -519,8 +519,8 @@ export const places: Place[] = [
     id: "mikkeller-baghaven",
     name: "Mikkeller Baghaven",
     category: "bar",
-    lat: 55.6892,
-    lng: 12.6108,
+    lat: 55.68953,
+    lng: 12.61045,
     description:
       "Best evening vibes as the sun sets over the harbour. Wild ales and sours in an industrial waterfront setting at Refshaleøen.",
     neighborhood: "Refshaleøen",
@@ -732,6 +732,18 @@ export const places: Place[] = [
   },
 
 
+  {
+    id: "aaben-brewery",
+    name: "Åben Brewery",
+    category: "bar",
+    lat: 55.66382,
+    lng: 12.55273,
+    description:
+      "Aarhus-born brewery with a taproom in Kødbyen. Great IPAs and lagers in a relaxed industrial setting in the Meatpacking District.",
+    neighborhood: "Kødbyen",
+    priceLevel: 2,
+    tags: ["beer bar", "brewery", "taproom", "industrial"],
+  },
   {
     id: "islands-brygge",
     name: "Islands Brygge Harbour Bath",
