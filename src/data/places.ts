@@ -519,8 +519,8 @@ export const places: Place[] = [
     id: "mikkeller-baghaven",
     name: "Mikkeller Baghaven",
     category: "bar",
-    lat: 55.6892,
-    lng: 12.6108,
+    lat: 55.68953,
+    lng: 12.61045,
     description:
       "Best evening vibes as the sun sets over the harbour. Wild ales and sours in an industrial waterfront setting at Refshaleøen.",
     neighborhood: "Refshaleøen",
