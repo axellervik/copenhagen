@@ -201,8 +201,8 @@ export const places: Place[] = [
     id: "palae-bar",
     name: "Palæ Bar",
     category: "lunch",
-    lat: 55.6777,
-    lng: 12.5857,
+    lat: 55.6802,
+    lng: 12.5862,
     description:
       "Central but not on the tourist trail. Walk into their kitchen and serve yourself authentic, inexpensive smørrebrød (open sandwiches). Warm service.",
     neighborhood: "Indre By",
