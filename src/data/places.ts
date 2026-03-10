@@ -507,8 +507,8 @@ export const places: Place[] = [
     id: "warpigs",
     name: "Warpigs Brewpub",
     category: "bar",
-    lat: 55.66459,
-    lng: 12.55395,
+    lat: 55.6672,
+    lng: 12.5560,
     description:
       "Brewpub serving authentic BBQ alongside great craft beers. Industrial vibes in Kødbyen (the meatpacking district).",
     neighborhood: "Kødbyen",
