@@ -1,4 +1,5 @@
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { allPlaces, Place, PlaceCategory, CATEGORY_CONFIG, COPENHAGEN_CENTER } from "@/data/places";
