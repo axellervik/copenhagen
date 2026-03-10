@@ -1247,6 +1247,33 @@ export const places: Place[] = [
     priceLevel: 1,
     tags: ["coffee", "latin quarter"],
   },
+  {
+    id: "rosenborg",
+    name: "Rosenborg Castle",
+    category: "attraction",
+    lat: 55.6858,
+    lng: 12.5773,
+    description:
+      "Renaissance castle built by Christian IV, home to the Danish Crown Jewels. Stunning royal interiors and beautiful gardens (Kongens Have) surrounding it.",
+    neighborhood: "Indre By",
+    priceLevel: 2,
+    googleMapsUrl: "https://maps.app.goo.gl/rosenborg",
+    website: "https://www.kongernessamling.dk/en/rosenborg/",
+    tags: ["castle", "crown jewels", "royal", "gardens"],
+  },
+  {
+    id: "christians-kirke",
+    name: "Christians Kirke",
+    category: "attraction",
+    lat: 55.6725,
+    lng: 12.5903,
+    description:
+      "Beautiful rococo church in Christianshavn built in 1759. Unique theatre-like interior with gallery seating. A peaceful architectural gem worth visiting.",
+    neighborhood: "Christianshavn",
+    googleMapsUrl: "https://maps.app.goo.gl/christianskirke",
+    website: "https://www.christianskirke.dk",
+    tags: ["church", "rococo", "architecture", "historic"],
+  },
 ];
 
 // Import and merge museum data

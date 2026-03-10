@@ -200,20 +200,6 @@ export const museums: Place[] = [
     tags: ["royal", "palace", "changing of guard"],
   },
   {
-    id: "rosenborg",
-    name: "Rosenborg Castle",
-    category: "museum",
-    lat: 55.6858,
-    lng: 12.5773,
-    description:
-      "Renaissance castle built by Christian IV, home to the Danish Crown Jewels. Stunning royal interiors and beautiful gardens (Kongens Have) surrounding it.",
-    neighborhood: "Indre By",
-    priceLevel: 2,
-    googleMapsUrl: "https://maps.app.goo.gl/rosenborg",
-    website: "https://www.kongernessamling.dk/en/rosenborg/",
-    tags: ["castle", "crown jewels", "royal", "gardens"],
-  },
-  {
     id: "copenhagen-museum",
     name: "Copenhagen Museum (CPHMUSEUM)",
     category: "museum",
