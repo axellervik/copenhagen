@@ -37,9 +37,9 @@ const getBarEmoji = (place: Place): string => {
   return "🍺";
 };
 
-const createIcon = (place: Place, isSelected: boolean) => {
+const createIcon = (place: Place, isSelected: boolean, isMobile: boolean) => {
   const config = CATEGORY_CONFIG[place.category];
-  const size = isSelected ? 40 : 32;
+  const size = isSelected ? 44 : (isMobile ? 38 : 32);
   const emoji = place.category === "bar" ? getBarEmoji(place) : config.emoji;
 
   return L.divIcon({
@@ -52,7 +52,7 @@ const createIcon = (place: Place, isSelected: boolean) => {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: ${isSelected ? 20 : 16}px;
+      font-size: ${isSelected ? 20 : (isMobile ? 18 : 16)}px;
       box-shadow: ${isSelected ? "0 0 0 3px white, 0 4px 16px -2px rgba(0,0,0,0.3)" : "0 2px 8px -2px rgba(0,0,0,0.2)"};
       cursor: pointer;
       transition: all 0.2s ease;
