@@ -507,8 +507,8 @@ export const places: Place[] = [
     id: "warpigs",
     name: "Warpigs Brewpub",
     category: "bar",
-    lat: 55.66459,
-    lng: 12.55395,
+    lat: 55.6672,
+    lng: 12.5560,
     description:
       "Brewpub serving authentic BBQ alongside great craft beers. Industrial vibes in Kødbyen (the meatpacking district).",
     neighborhood: "Kødbyen",
@@ -762,8 +762,8 @@ export const places: Place[] = [
     id: "aaben-brewery",
     name: "Åben Brewery",
     category: "bar",
-    lat: 55.66382,
-    lng: 12.55273,
+    lat: 55.6636,
+    lng: 12.5530,
     description:
       "Aarhus-born brewery with a taproom in Kødbyen. Great IPAs and lagers in a relaxed industrial setting in the Meatpacking District.",
     neighborhood: "Kødbyen",
@@ -1246,6 +1246,33 @@ export const places: Place[] = [
     neighborhood: "Indre By",
     priceLevel: 1,
     tags: ["coffee", "latin quarter"],
+  },
+  {
+    id: "rosenborg",
+    name: "Rosenborg Castle",
+    category: "attraction",
+    lat: 55.6858,
+    lng: 12.5773,
+    description:
+      "Renaissance castle built by Christian IV, home to the Danish Crown Jewels. Stunning royal interiors and beautiful gardens (Kongens Have) surrounding it.",
+    neighborhood: "Indre By",
+    priceLevel: 2,
+    googleMapsUrl: "https://maps.app.goo.gl/rosenborg",
+    website: "https://www.kongernessamling.dk/en/rosenborg/",
+    tags: ["castle", "crown jewels", "royal", "gardens"],
+  },
+  {
+    id: "christians-kirke",
+    name: "Christians Kirke",
+    category: "attraction",
+    lat: 55.6725,
+    lng: 12.5903,
+    description:
+      "Beautiful rococo church in Christianshavn built in 1759. Unique theatre-like interior with gallery seating. A peaceful architectural gem worth visiting.",
+    neighborhood: "Christianshavn",
+    googleMapsUrl: "https://maps.app.goo.gl/christianskirke",
+    website: "https://www.christianskirke.dk",
+    tags: ["church", "rococo", "architecture", "historic"],
   },
 ];
 
