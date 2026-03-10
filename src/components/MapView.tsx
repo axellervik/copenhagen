@@ -120,6 +120,7 @@ const MapView = () => {
       center: [COPENHAGEN_CENTER.lat, COPENHAGEN_CENTER.lng],
       zoom: 13,
       zoomControl: false,
+      tap: false,
     });
 
     L.control.zoom({ position: "bottomright" }).addTo(map);
