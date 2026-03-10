@@ -762,8 +762,8 @@ export const places: Place[] = [
     id: "aaben-brewery",
     name: "Åben Brewery",
     category: "bar",
-    lat: 55.66382,
-    lng: 12.55273,
+    lat: 55.6636,
+    lng: 12.5530,
     description:
       "Aarhus-born brewery with a taproom in Kødbyen. Great IPAs and lagers in a relaxed industrial setting in the Meatpacking District.",
     neighborhood: "Kødbyen",
