@@ -879,19 +879,6 @@ export const places: Place[] = [
     tags: ["amusement park", "gardens", "historic", "night lights"],
   },
   {
-    id: "rosenborg",
-    name: "Rosenborg Castle",
-    category: "attraction",
-    lat: 55.68594,
-    lng: 12.57731,
-    description:
-      "Renaissance castle built by Christian IV. Home to the Danish Crown Jewels. The surrounding Kongens Have (King's Garden) is Copenhagen's oldest and most popular park.",
-    neighborhood: "Indre By",
-    priceLevel: 2,
-    googleMapsUrl: "https://maps.app.goo.gl/rosenborg",
-    tags: ["castle", "crown jewels", "gardens", "historic"],
-  },
-  {
     id: "christiansborg",
     name: "Christiansborg Palace",
     category: "attraction",
