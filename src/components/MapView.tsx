@@ -1,4 +1,5 @@
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { allPlaces, Place, PlaceCategory, CATEGORY_CONFIG, COPENHAGEN_CENTER } from "@/data/places";
@@ -37,9 +38,9 @@ const getBarEmoji = (place: Place): string => {
   return "🍺";
 };
 
-const createIcon = (place: Place, isSelected: boolean) => {
+const createIcon = (place: Place, isSelected: boolean, isMobile: boolean) => {
   const config = CATEGORY_CONFIG[place.category];
-  const size = isSelected ? 40 : 32;
+  const size = isSelected ? 44 : (isMobile ? 38 : 32);
   const emoji = place.category === "bar" ? getBarEmoji(place) : config.emoji;
 
   return L.divIcon({
@@ -52,7 +53,7 @@ const createIcon = (place: Place, isSelected: boolean) => {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: ${isSelected ? 20 : 16}px;
+      font-size: ${isSelected ? 20 : (isMobile ? 18 : 16)}px;
       box-shadow: ${isSelected ? "0 0 0 3px white, 0 4px 16px -2px rgba(0,0,0,0.3)" : "0 2px 8px -2px rgba(0,0,0,0.2)"};
       cursor: pointer;
       transition: all 0.2s ease;
@@ -63,6 +64,7 @@ const createIcon = (place: Place, isSelected: boolean) => {
 };
 
 const MapView = () => {
+  const isMobile = useIsMobile();
   const mapRef = useRef<L.Map | null>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const tileLayerRef = useRef<L.TileLayer | null>(null);
@@ -120,6 +122,8 @@ const MapView = () => {
       center: [COPENHAGEN_CENTER.lat, COPENHAGEN_CENTER.lng],
       zoom: 13,
       zoomControl: false,
+      // @ts-ignore - disable legacy tap handler for mobile compatibility
+      tap: false,
     });
 
     L.control.zoom({ position: "bottomright" }).addTo(map);
@@ -165,7 +169,7 @@ const MapView = () => {
     filteredPlaces.forEach((place) => {
       const isSelected = selectedPlace?.id === place.id;
       const marker = L.marker([place.lat, place.lng], {
-        icon: createIcon(place, isSelected),
+        icon: createIcon(place, isSelected, isMobile),
       })
         .on("click", () => setSelectedPlace(place))
         .addTo(mapRef.current!);
