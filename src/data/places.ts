@@ -1051,8 +1051,8 @@ export const places: Place[] = [
     id: "prag",
     name: "Prag",
     category: "vintage",
-    lat: 55.6706,
-    lng: 12.5460,
+    lat: 55.6721,
+    lng: 12.5473,
     description:
       "A massive vintage and creative hub across multiple floors. Clothing, furniture, records, and quirky finds. A Vesterbro institution on Vesterbrogade.",
     neighborhood: "Vesterbro",
