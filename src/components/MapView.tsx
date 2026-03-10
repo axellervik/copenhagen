@@ -169,7 +169,7 @@ const MapView = () => {
     filteredPlaces.forEach((place) => {
       const isSelected = selectedPlace?.id === place.id;
       const marker = L.marker([place.lat, place.lng], {
-        icon: createIcon(place, isSelected),
+        icon: createIcon(place, isSelected, isMobile),
       })
         .on("click", () => setSelectedPlace(place))
         .addTo(mapRef.current!);
