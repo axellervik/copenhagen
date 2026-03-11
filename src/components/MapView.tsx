@@ -33,8 +33,8 @@ const THEME_CLASSES: Record<MapTheme, string> = {
 
 const getBarEmoji = (place: Place): string => {
   const tags = place.tags?.map(t => t.toLowerCase()) || [];
-  if (tags.some(t => t.includes("wine"))) return "🍷";
   if (tags.some(t => t.includes("cocktail") || t.includes("gin") || t.includes("whisky"))) return "🍸";
+  if (tags.some(t => t.includes("wine"))) return "🍷";
   return "🍺";
 };
 
