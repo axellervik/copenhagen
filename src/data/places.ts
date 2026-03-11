@@ -234,7 +234,7 @@ export const places: Place[] = [
     description: "Ny-nordisk gastronomi vid vattnet. 400–500 DKK för 4–5 rätters meny.",
     neighborhood: "Christianshavn",
     priceLevel: 2,
-    tags: ["new nordic", "waterfront", "tasting menu"],
+    tags: ["new nordic", "waterfront", "tasting menu", "evening sun"],
   },
   {
     id: "donda-khana",
@@ -478,6 +478,19 @@ export const places: Place[] = [
 
   // Bars
   {
+    id: "pulp-bar",
+    name: "Pulp",
+    category: "bar",
+    lat: 55.6926,
+    lng: 12.5606,
+    description:
+      "A vibrant and popular spot located right on Sankt Hans Torv. Excellent for natural wine, craft beer, and soaking in the lively Nørrebro atmosphere.",
+    neighborhood: "Nørrebro",
+    priceLevel: 2,
+    googleMapsUrl: "https://maps.app.goo.gl/ajdCXUwbUXvDBtnb9", // Example shortlink, verify before use
+    tags: ["cocktails", "wine bar", "natural wine", "craft beer", "lively"],
+  },
+  {
     id: "riga",
     name: "Riga",
     category: "bar",
@@ -488,7 +501,7 @@ export const places: Place[] = [
     neighborhood: "Vesterbro",
     priceLevel: 2,
     googleMapsUrl: "https://goo.gl/maps/46HYVd1gsZAa87Aa8",
-    tags: ["beer bar", "sun terrace", "pilsner", "spritz"],
+    tags: ["beer", "sun terrace", "pilsner", "spritz"],
   },
   {
     id: "fermentoren",
@@ -501,7 +514,7 @@ export const places: Place[] = [
     neighborhood: "Vesterbro",
     priceLevel: 2,
     googleMapsUrl: "https://maps.app.goo.gl/TYGVhhSYd4jTnPrk8",
-    tags: ["beer bar", "craft beer", "candle-lit", "grungy"],
+    tags: ["beer", "craft beer", "candle-lit", "grungy"],
   },
   {
     id: "warpigs",
@@ -514,7 +527,7 @@ export const places: Place[] = [
     neighborhood: "Kødbyen",
     priceLevel: 2,
     googleMapsUrl: "https://maps.app.goo.gl/dpBvSNKaWXsTmSTJ6",
-    tags: ["beer bar", "brewpub", "BBQ", "industrial"],
+    tags: ["beer", "brewpub", "BBQ", "industrial"],
   },
   {
     id: "lidkoeb",
@@ -527,7 +540,7 @@ export const places: Place[] = [
     neighborhood: "Vesterbro",
     priceLevel: 3,
     googleMapsUrl: "https://goo.gl/maps/yCwtJPeKegLPVVDu9",
-    tags: ["cocktail bar", "whisky bar", "atmospheric"],
+    tags: ["cocktails", "whisky bar", "atmospheric"],
   },
   {
     id: "bo-bi-bar",
@@ -540,7 +553,7 @@ export const places: Place[] = [
     neighborhood: "Indre By",
     priceLevel: 1,
     googleMapsUrl: "https://maps.app.goo.gl/w49djh6ZBJPdKtK6A",
-    tags: ["beer bar", "bodega", "boiled eggs", "no photos"],
+    tags: ["beer", "bodega", "boiled eggs", "no photos"],
   },
   {
     id: "mikkeller-baghaven",
@@ -553,7 +566,7 @@ export const places: Place[] = [
     neighborhood: "Refshaleøen",
     priceLevel: 2,
     googleMapsUrl: "https://goo.gl/maps/Tc6ywRo5M25KzLQu5",
-    tags: ["beer bar", "craft beer", "sunset", "waterfront"],
+    tags: ["beer", "craft beer", "sunset", "waterfront"],
   },
   {
     id: "byens-kro",
@@ -565,7 +578,7 @@ export const places: Place[] = [
       "Cheap beer bar on Møntergade — one of Copenhagen's oldest inns (since 1783). Try the Dødsglögg if you dare.",
     neighborhood: "Indre By",
     priceLevel: 1,
-    tags: ["beer bar", "cheap", "historic"],
+    tags: ["beer", "cheap", "historic"],
   },
   {
     id: "dexters",
@@ -578,7 +591,7 @@ export const places: Place[] = [
     neighborhood: "Nørrebro",
     priceLevel: 2,
     website: "https://www.dexterscph.com/",
-    tags: ["cocktail bar", "caribbean", "tropical"],
+    tags: ["cocktails", "caribbean", "tropical"],
   },
   {
     id: "maxim-pivo",
@@ -590,7 +603,7 @@ export const places: Place[] = [
       "Czech-style beer bar on Åboulevard with an ever-rotating selection of craft beer on tap. Regular tap takeovers and events.",
     neighborhood: "Frederiksberg",
     priceLevel: 2,
-    tags: ["beer bar", "craft beer", "czech"],
+    tags: ["beer", "craft beer", "czech"],
   },
   {
     id: "two-socks-central",
@@ -641,7 +654,7 @@ export const places: Place[] = [
     neighborhood: "Vesterbro",
     priceLevel: 3,
     website: "https://curfew.dk/",
-    tags: ["cocktail bar", "speakeasy", "hidden entrance"],
+    tags: ["cocktails", "speakeasy", "hidden entrance"],
   },
   {
     id: "balderdash",
@@ -654,7 +667,7 @@ export const places: Place[] = [
     neighborhood: "Indre By",
     priceLevel: 2,
     website: "https://www.balderdash.dk/",
-    tags: ["cocktail bar", "classic cocktails", "hygge"],
+    tags: ["cocktails", "innovative", "hygge"],
   },
   {
     id: "strom-bar",
@@ -667,7 +680,7 @@ export const places: Place[] = [
     neighborhood: "Indre By",
     priceLevel: 3,
     website: "https://www.strombar.dk/",
-    tags: ["cocktail bar", "gourmet", "homemade ingredients"],
+    tags: ["cocktails", "gourmet", "homemade ingredients"],
   },
   {
     id: "rendezvous",
@@ -680,7 +693,7 @@ export const places: Place[] = [
     neighborhood: "Christianshavn",
     priceLevel: 2,
     website: "https://rendezvous-bar.dk/",
-    tags: ["cocktail bar", "hotel bar", "papirøen"],
+    tags: ["cocktails", "hotel bar", "papirøen"],
   },
   {
     id: "tata-cocktail-bar",
@@ -693,7 +706,7 @@ export const places: Place[] = [
     neighborhood: "Indre By",
     priceLevel: 3,
     website: "https://hotelsanders.com/tata-cocktail-bar/",
-    tags: ["cocktail bar", "hotel bar", "vintage", "intimate"],
+    tags: ["cocktails", "hotel", "fancy"],
   },
   {
     id: "taphouse",
@@ -705,7 +718,7 @@ export const places: Place[] = [
       "Massive craft beer bar on Lavendelstræde with 61 taps of Danish and international craft beer. One of the biggest tap selections in Copenhagen.",
     neighborhood: "Indre By",
     priceLevel: 2,
-    tags: ["beer bar", "craft beer", "61 taps"],
+    tags: ["beer", "craft beer", "taps"],
   },
   {
     id: "godt-ol",
@@ -717,7 +730,7 @@ export const places: Place[] = [
       "Cosy, family-run craft beer bar on Knabrostræde. 12 taps and 75+ bottles/cans from the best Danish and international breweries. Cellar vibes.",
     neighborhood: "Indre By",
     priceLevel: 2,
-    tags: ["beer bar", "craft beer", "cosy", "cellar"],
+    tags: ["beer", "craft beer", "cosy", "cellar"],
   },
   {
     id: "peders",
@@ -730,7 +743,7 @@ export const places: Place[] = [
     neighborhood: "Indre By",
     priceLevel: 2,
     website: "https://pederscph.dk/",
-    tags: ["beer bar", "craft beer", "bottle shop"],
+    tags: ["beer", "craft beer", "bottle shop"],
   },
   {
     id: "pompette",
@@ -755,7 +768,7 @@ export const places: Place[] = [
     neighborhood: "Nørrebro",
     priceLevel: 1,
     website: "https://escobarcph.dk/",
-    tags: ["beer bar", "rock & metal", "cheap", "student-friendly"],
+    tags: ["beer", "rock & metal", "cheap", "student-friendly"],
   },
 
   {
@@ -768,7 +781,7 @@ export const places: Place[] = [
       "Aarhus-born brewery with a taproom in Kødbyen. Great IPAs and lagers in a relaxed industrial setting in the Meatpacking District.",
     neighborhood: "Kødbyen",
     priceLevel: 2,
-    tags: ["beer bar", "brewery", "taproom", "industrial"],
+    tags: ["beer", "brewery", "taps", "industrial"],
   },
   {
     id: "islands-brygge",
@@ -834,7 +847,7 @@ export const places: Place[] = [
     neighborhood: "Indre By",
     priceLevel: 2,
     googleMapsUrl: "https://maps.app.goo.gl/T77mGWDSFsN7k8Ro8",
-    tags: ["beer bar", "kayak", "floating bar", "seafood"],
+    tags: ["beer", "kayak", "floating bar", "seafood"],
   },
 
   // Attractions
@@ -1043,7 +1056,7 @@ export const places: Place[] = [
       "Christiania's legendary outdoor bar. Cheap beers, live music in summer, and the most laid-back atmosphere in Copenhagen. Cash only.",
     neighborhood: "Christiania",
     priceLevel: 1,
-    tags: ["beer bar", "outdoor", "live music", "cash only", "cheap"],
+    tags: ["beer", "outdoor", "live music", "cash only", "cheap"],
   },
 
   // Vintage / Thrift
